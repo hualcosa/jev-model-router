@@ -1,0 +1,16 @@
+{
+  "sdk": "typesafe-sdk",
+  "expected_version": "0.7.5",
+  "mode": "offline_mock_transport",
+  "network_request": false,
+  "installed_version": "0.7.5",
+  "status": "passed",
+  "selected_tier": "T0",
+  "tier_confidence": 0.94,
+  "reasoning_score": 0.25,
+  "reasoning_confidence": 0.92,
+  "request_count": 1,
+  "model": "jev-latest",
+  "elapsed_ms": 1.25,
+  "evidence": "official_sdk_mock_contract_only"
+}

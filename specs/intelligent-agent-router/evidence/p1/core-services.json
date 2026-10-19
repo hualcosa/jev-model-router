@@ -1,0 +1,55 @@
+{
+  "tasks": [
+    "RTE-008",
+    "RTE-009",
+    "RTE-010",
+    "RTE-012",
+    "RTE-013"
+  ],
+  "integration": "Reviewed isolated config/catalog worker outputs and integrated accepted files into primary local main; no commits. Parent privacy/classifier/normalizer also primary.",
+  "focused_tests": {
+    "config": 11,
+    "catalog": 16,
+    "privacy": 11,
+    "classifier_with_official_sdk_mock": 10
+  },
+  "full_regression_default": {
+    "tests": 405,
+    "failures": 0,
+    "skipped": 2,
+    "skip_reason": "two optional SDK MockTransport tests; both separately pass in pinned SDK interpreter"
+  },
+  "full_regression_pinned_sdk": {
+    "tests": 405,
+    "failures": 0,
+    "skipped": 0
+  },
+  "live_core_evidence": "jev-core-live-synthetic.json",
+  "source_language": "Python>=3.10 for SDK; main checks on Python3.15.0",
+  "guards": [
+    "disabled/no-consent defaults",
+    "narrow-only untrusted project config",
+    "global consent regular owned non-writable-by-others file",
+    "exact model-version/runtime/surface/tool evidence",
+    "no assumed desktop support",
+    "bounded minimized consent-gated task payload",
+    "hard enclosing SDK process deadline and zero retries",
+    "strict actual response normalization; lowconfidence not treated as failure/simple task"
+  ],
+  "not_proven": [
+    "policy selection or risk floors",
+    "boundary/state/dedupe",
+    "native production adapters or actual root warnings",
+    "install/uninstall/rollback",
+    "desktop compatibility",
+    "release permission/conflict matrix",
+    "outcome quality or latency percentiles",
+    "coverage percentage"
+  ],
+  "limitations": [
+    "redaction best-effort, never replaces consent",
+    "synthetic registry trusted application data only",
+    "catalog requires authoritative snapshots; no guessed automatic discovery",
+    "legacy upstream plugin not migrated yet"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "runtime": "codex",
+  "version": "0.163.0",
+  "surface": "cli",
+  "status": "passed",
+  "fixture": "synthetic_static_route_not_production_router",
+  "same_run_preparation_and_native_hook": true,
+  "logical_preparation_calls": 1,
+  "native_spawn_calls": 1,
+  "preparation_plaintext_received": true,
+  "native_spawn_message_opaque": true,
+  "original_nonrouting_fields_preserved": true,
+  "child_reply_matches": true,
+  "parent": {
+    "model": "gpt-6.1-sol",
+    "effort": "low",
+    "sandbox_policy": {
+      "type": "read-only"
+    },
+    "approval_policy": "never"
+  },
+  "child": {
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "sandbox_policy": {
+      "type": "read-only"
+    },
+    "approval_policy": "never"
+  },
+  "task_binding": "orchestrator_attested",
+  "permission_mode_observed": "bypassPermissions; approval_policy never explicitly chosen for this read-only synthetic exec; not evidence of on-request compatibility",
+  "verification_source": "same exec stream, native hooks, last host turn_context in synthetic parent and child transcripts; no private transcript parser proposed for production",
+  "not_proven": [
+    "Jev classification or latency",
+    "one-time decision references, TTL, session/project isolation or replay protection (production work pending)",
+    "cryptographic equality between prepared and encrypted task",
+    "desktop",
+    "on-request/deny/ask hook permission matrix",
+    "root tool compliance reliability across arbitrary tasks"
+  ]
+}

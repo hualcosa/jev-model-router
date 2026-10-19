@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "task": "RTE-028",
+  "full_suite_tests": 634,
+  "pinned_sdk_skips": 0,
+  "native_child_observation": "claude-telemetry-native.json",
+  "sonnet_medium_mapping": "claude-sonnet-alias-native.json",
+  "child_actual_model": "unverified",
+  "child_actual_effort": "reported_by_host",
+  "parent_tool_child_join": "unverified",
+  "model_switch_verification": "native-format unit fixtures, not a live manual switch",
+  "root_identity_mapping": "exact optional root_model_ids, advisory-only, snapshot-bound",
+  "root_cold_start_advisory": "pending_RTE-024_host_metadata_missing",
+  "root_capability_evidence": "claude-root-native-capability.json",
+  "global_activation": false,
+  "private_project_jev_transmission": false,
+  "source_review": "two medium verifier findings fixed; focused follow-up no remaining medium/high",
+  "not_proven": [
+    "cold-start visible root advisory",
+    "live manual switch",
+    "desktop",
+    "coexistence and full permissions matrix"
+  ],
+  "default_optional_sdk_skips": 2
+}

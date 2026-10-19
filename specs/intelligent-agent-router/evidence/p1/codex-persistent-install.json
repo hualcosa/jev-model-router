@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "status": "installed_trusted_root_synthetic_passed",
+  "version": "0.1.0+a5bc42849e77",
+  "persistent": true,
+  "payload_files_verified": 33,
+  "hooks_trusted": 8,
+  "native_trust_bypassed": false,
+  "native_exit_code": 0,
+  "observed_sources": [
+    "SessionStart",
+    "UserPromptSubmit",
+    "assessment",
+    "boundary"
+  ],
+  "assessment": {
+    "catalog_hash": "c1853bd397feeda173faed6f4fe916dea0047bbf6e4c70b5b2772054f2917719",
+    "confidence": 0.64,
+    "disposition": "defer",
+    "elapsed_ms": 854.7604999912437,
+    "event": "root_prompt",
+    "policy_hash": "92521fc3cbd964bdc9f584a991b89fddaa5754ed1cc96d6d42445338669c1305",
+    "policy_provenance": "policy_prior",
+    "provider_calls": 1,
+    "provider_status": "success",
+    "reason": "low_confidence",
+    "recommended_effort": null,
+    "recommended_model": null,
+    "requirements": {
+      "ambiguity": null,
+      "complexity": 0.0,
+      "confidence": 0.64,
+      "reasoning": 0.0,
+      "risk": "low",
+      "tier": "T0",
+      "tool_complexity": 0.0
+    },
+    "selected_effort": null,
+    "selected_model": null,
+    "snapshot_hash": "5e79a0287e20cfe7dfe5f149a07f7833d463c8aa5dd09ecaffb0020b4e52d9de"
+  },
+  "mode": "warn",
+  "synthetic_consent": true,
+  "real_task_consent": false,
+  "not_proven": [
+    "installed-package native worker rewrite",
+    "desktop",
+    "representative task outcomes",
+    "Terra6 availability"
+  ]
+}

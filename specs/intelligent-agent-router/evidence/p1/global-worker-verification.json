@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "runtime": "codex",
+  "host_version": "0.163.0",
+  "installed_version": "0.1.0+ecd4ce158d73",
+  "status": "native_global_worker_route_verified",
+  "fixture": "TASK-011 synthetic in scratch",
+  "assessment": {
+    "catalog_hash": "2425c70047bf036cf40dd4e713d8f671bb1d353af99a2f42ed98abfae99f396d",
+    "confidence": 0.83,
+    "disposition": "route_worker",
+    "elapsed_ms": 496.5948750032112,
+    "event": "prepared_task",
+    "policy_hash": "92521fc3cbd964bdc9f584a991b89fddaa5754ed1cc96d6d42445338669c1305",
+    "policy_provenance": "policy_prior",
+    "provider_calls": 1,
+    "provider_status": "success",
+    "reason": "classified",
+    "recommended_effort": null,
+    "recommended_model": null,
+    "requirements": {
+      "ambiguity": null,
+      "complexity": 0.0,
+      "confidence": 0.83,
+      "reasoning": 0.045,
+      "risk": "low",
+      "tier": "T1",
+      "tool_complexity": 0.025
+    },
+    "selected_effort": "medium",
+    "selected_model": "gpt-6.1-sol",
+    "snapshot_hash": "d2766c8c3c04a69be19ceb4485df2da6f88139de12d6c7f90d8d505fa05b1744"
+  },
+  "native_workers_started": 1,
+  "native_workers_completed": 1,
+  "rewrite_emitted": 1,
+  "native_child": {
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "approval_policy": "never",
+    "sandbox": "read-only"
+  },
+  "native_root": {
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "approval_policy": "never",
+    "sandbox": "read-only"
+  },
+  "native_context_evidence": "Exact synthetic root; child session_meta parent_thread_id match before turn_context extraction",
+  "root_preserved": true,
+  "different_model_from_root": false,
+  "not_proven": [
+    "task implementation quality",
+    "cost savings",
+    "all models/permission modes",
+    "desktop",
+    "Claude automatic routing"
+  ]
+}

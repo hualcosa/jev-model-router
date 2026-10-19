@@ -6,12 +6,17 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -32,3 +37,23 @@ jobs:
 
       - name: Agent variant parity
         run: python3 scripts/generate_variants.py --check
+
+  offline-sdk-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TYPESAFE_API_KEY: ""
+      JEV_API_KEY: ""
+      OPENAI_API_KEY: ""
+      ANTHROPIC_API_KEY: ""
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned SDK for mock-transport contracts
+        run: python3 -m pip install 'typesafe-sdk==0.7.5'
+      - name: Offline unit, property and contract suite (no skips)
+        run: python3 scripts/run_offline_tests.py --require-sdk

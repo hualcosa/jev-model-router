@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "task": "RTE-042",
+  "focused_explain_tests": 23,
+  "full_suite_tests": 658,
+  "default_optional_sdk_skips": 2,
+  "pinned_typesafe_sdk_version": "0.7.5",
+  "pinned_sdk_skips": 0,
+  "cli": "scripts/router_cli.py explain",
+  "explicit_scope_selection": true,
+  "retained_records_only": true,
+  "snapshot_lookup": "shared-lock read-only scoped hash-bound batch",
+  "historical_catalog_states": [
+    "recorded_snapshot",
+    "missing_or_expired",
+    "unavailable",
+    "hash_mismatch"
+  ],
+  "current_runtime_or_entitlement_checked": false,
+  "parent_tool_child_join": "unverified",
+  "reclassification": false,
+  "runtime_or_inventory_launch": false,
+  "stdin_or_config_or_key_read": false,
+  "state_or_lock_creation_or_temp_cleanup": false,
+  "state_write": false,
+  "cli_import_cache_write": false,
+  "legacy_policy_provenance": "unknown_not_recorded",
+  "conflicting_duplicate_rows": "rejected",
+  "subprocess_smoke": "explain-offline-native-format.json",
+  "updated_native_package_smoke": "codex-package-explain-native.json",
+  "source_review": "one medium explicit-project issue fixed and focused recheck resolved",
+  "global_activation": false,
+  "trust_changes": false,
+  "not_proven": [
+    "trusted packaged native execution",
+    "desktop operation",
+    "complete history",
+    "quality/savings/quota claims"
+  ]
+}

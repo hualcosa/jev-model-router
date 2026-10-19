@@ -1,6 +1,7 @@
 .claude/worktrees/
 .claude-plugin/
 __pycache__/
+.codegraph/
 specs/.current-spec
 specs/.current-epic
 **/.progress.md

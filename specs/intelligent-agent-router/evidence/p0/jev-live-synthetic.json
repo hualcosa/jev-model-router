@@ -1,0 +1,16 @@
+{
+  "sdk": "typesafe-sdk",
+  "expected_version": "0.7.5",
+  "mode": "live_synthetic",
+  "network_request": true,
+  "installed_version": "0.7.5",
+  "status": "passed",
+  "selected_tier": "T1",
+  "tier_confidence": 0.56,
+  "reasoning_score": 0.44,
+  "reasoning_confidence": 0.32,
+  "request_count": 1,
+  "model": "jev-1.13.0",
+  "elapsed_ms": 533.48,
+  "evidence": "live_service"
+}

@@ -1,0 +1,24 @@
+{
+  "fixture": "fixed_imaginary_files_only",
+  "network": "one_official_SDK_request_at_most_no_retries",
+  "elapsed_ms": 560.53,
+  "deadline_ms": 2500,
+  "result": {
+    "schema_version": 1,
+    "status": "success",
+    "requirements": {
+      "schema_version": 1,
+      "complexity": 0.0,
+      "reasoning": 0.0,
+      "tool_complexity": 0.0,
+      "confidence": 0.59,
+      "tier": "T0",
+      "ambiguity": null,
+      "risk": "low",
+      "provider_raw_tier": "T0"
+    },
+    "provider": "typesafe_jev",
+    "reason_code": null
+  },
+  "scope": "core_client_contract_not_routing_quality_or_desktop"
+}

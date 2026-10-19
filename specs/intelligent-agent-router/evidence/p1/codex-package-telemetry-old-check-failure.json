@@ -1,0 +1,12 @@
+{
+  "status": "unverified",
+  "reason_code": "installed_command_shape_unverified",
+  "private_fixture": "/private/var/folders/gy/4fqff5xd3k51nnccz76xsqcm0000gn/T/router-package-native-z9m1st6h",
+  "inference_calls": 0,
+  "hook_trust_granted": false,
+  "user_home_config_changed": false,
+  "user_config_files_verified": [
+    "config.toml",
+    "hooks.json"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "provenance": "New self-authored synthetic code-review tasks. Not project/user code, not held-out representative engineering work.",
+  "tasks": [
+    {
+      "id": "strict-positive",
+      "description": "Debug a small Python search function. Identify the incorrect source line and derive an integer-list counterexample proving violation of the first strictly positive value contract, including expected and actual return values.",
+      "contract": "Return the first strictly positive value from xs, or None if no such value exists.",
+      "source": "1 def first_positive(xs):\n2     for x in xs:\n3         if x >= 0:\n4             return x\n5     return None",
+      "bug_line": 3,
+      "known_counterexample": {"values": [0, 2], "target": null},
+      "known_expected": 2,
+      "known_actual": 0
+    },
+    {
+      "id": "stable-dedupe",
+      "description": "Debug a Python stable deduplication function. Identify the faulty source line and derive a counterexample where duplicate removal fails to preserve first-appearance order; report exact expected and actual outputs.",
+      "contract": "Remove duplicates from xs while preserving first-appearance order. Inputs are integer lists.",
+      "source": "1 def stable_unique(xs):\n2     return sorted(set(xs))",
+      "bug_line": 2,
+      "known_counterexample": {"values": [2, 1, 2], "target": null},
+      "known_expected": [2, 1],
+      "known_actual": [1, 2]
+    },
+    {
+      "id": "binary-search-boundary",
+      "description": "Debug a Python binary search boundary condition. Locate the faulty line and construct a sorted unique integer-list and target counterexample proving an existing element is missed. Derive exact expected and actual indices.",
+      "contract": "For sorted unique xs, return the index of target if present, otherwise -1.",
+      "source": "1 def find_index(xs, target):\n2     lo, hi = 0, len(xs) - 1\n3     while lo < hi:\n4         mid = (lo + hi) // 2\n5         if xs[mid] == target:\n6             return mid\n7         if xs[mid] < target:\n8             lo = mid + 1\n9         else:\n10            hi = mid - 1\n11    return -1",
+      "bug_line": 3,
+      "known_counterexample": {"values": [1], "target": 1},
+      "known_expected": 0,
+      "known_actual": -1
+    }
+  ]
+}

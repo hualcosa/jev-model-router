@@ -1,0 +1,30 @@
+=== Router eval (70 rows, cli_fallback=false) ===
+
+Per-class accuracy:
+  mechanical      12/12   100.00%
+  implementation  13/13   100.00%
+  debugging       10/10   100.00%
+  architecture    10/10   100.00%
+  extreme         10/10   100.00%
+  abstain         15/15   100.00%
+  OVERALL         70/70   100.00%
+  ROUTE           55/55   100.00%
+
+Confusion matrix (row = expected, col = predicted):
+                 mechani impleme debuggi archite extreme abstain
+  mechanical          12       0       0       0       0       0
+  implementation       0      13       0       0       0       0
+  debugging            0       0      10       0       0       0
+  architecture         0       0       0      10       0       0
+  extreme              0       0       0       0      10       0
+  abstain              0       0       0       0       0      15
+
+Tier distribution (non-abstain decisions = 55):
+  haiku     12  21.82%
+  sonnet     0  0.00%
+  opus      43  78.18%
+  fable      0  0.00%
+
+Timing: heuristic classify p95 = 0.14 ms (max 200)
+
+GATES PASSED

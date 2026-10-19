@@ -1,0 +1,32 @@
+{
+  "task": "RTE-007",
+  "status": "passed",
+  "files": [
+    "router_core/__init__.py",
+    "router_core/contracts.py",
+    "tests/test_core_contracts.py"
+  ],
+  "integration": "Reviewed and copied to primary local main; no implementation commits. Auxiliary patch retained, not sole location of accepted work.",
+  "focused_tests": {
+    "run": 15,
+    "failures": 0
+  },
+  "regression_tests": {
+    "run": 357,
+    "failures": 0,
+    "skipped": 1,
+    "skip_reason": "optional TypeSafe SDK absent in default interpreter; separate private SDK tests previously pass"
+  },
+  "review_fixes": [
+    "required event validation",
+    "duplicate JSON rejection",
+    "allowlisted telemetry excludes arbitrary input strings and bearer decision references"
+  ],
+  "not_proven": [
+    "policy",
+    "adapters",
+    "live Jev",
+    "desktop",
+    "coverage percentage"
+  ]
+}

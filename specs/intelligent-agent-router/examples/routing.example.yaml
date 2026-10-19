@@ -1,0 +1,59 @@
+# CONCEPTUAL YAML ONLY — runtime schema v1 accepts JSON; use routing.example.json.
+schema_version: 1
+mode: shadow  # disabled | shadow | warn | auto_workers
+classification:
+  provider: typesafe_jev
+  require_opt_in: true
+  env_key: TYPESAFE_API_KEY
+  deadline_ms: 2500
+  retry_count: 0
+  send_full_transcript: false
+  minimize_task_payload: true
+boundary:
+  root_mode: hybrid_structural_and_stateful
+  unknown_boundary: defer
+  classify_obvious_continuation: false
+  explicit_preflight_enabled: true
+root:
+  preserve_model: true
+  preserve_effort: true
+  warning_enabled: true
+  warning_once_per_task: true
+  material_gain_only: true
+workers:
+  route_unpinned_only: true
+  preserve_custom_or_unknown_profile: true
+  allow_verified_generic_type: true
+  delegation_guidance: omit_unpinned_model_and_effort
+  preserve_explicit_model: true
+  preserve_explicit_effort: true
+  on_invalid_schema: inherit
+  on_missing_catalog: inherit
+  on_classifier_failure: inherit
+policy:
+  # Semantic version pins, NOT runtime model IDs; validate mapping/account before use.
+  target_versions:
+    claude:
+      fable: "5.1"
+    codex:
+      luna: "6"
+      terra: "6"
+      sol: "6.1"
+      astra: "6"
+  allow_implicit_version_substitution: false
+  availability_source: user_assumption  # user says all target models are available
+  require_verified_runtime_mapping: true  # IDs/versions, tool fields and efforts still checked
+  default_tier_map:
+    claude: { mechanical: haiku, standard: sonnet, difficult: opus, frontier: fable }
+    codex: { mechanical: luna, standard: sol, difficult: sol, frontier: astra }
+  frontier_auto_opt_in: false
+  min_confidence_for_auto: 0.75  # provisional, calibrate
+  effort:
+    standard: medium
+    difficult: high
+    frontier: high
+  enforce_supported_catalog: true
+observability:
+  log_decisions: true
+  record_raw_prompt: false
+  private_state_permissions: true

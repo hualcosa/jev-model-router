@@ -1,0 +1,44 @@
+{
+  "checkpoint_utc": "2026-10-19T19:55:46.638078+00:00",
+  "branch": "main",
+  "base_head": "f687111e1bd1947df23d676354afc99467294a39",
+  "implementation_state": "uncommitted in primary checkout",
+  "verified_tasks": [
+    "RTE-020",
+    "RTE-022",
+    "RTE-023",
+    "RTE-025",
+    "RTE-026",
+    "RTE-035",
+    "RTE-046"
+  ],
+  "default_unittest": {
+    "tests": 520,
+    "status": "passed",
+    "optional_sdk_skips": 2
+  },
+  "focused_tests": {
+    "persistent_state": 26,
+    "native_adapter": 9,
+    "mcp": 5,
+    "representative_corpus": 6,
+    "cli_preview_preflight": 8
+  },
+  "native_claude_evidence": "claude-core-native.json",
+  "boundary_evaluation": "boundary-corpus-eval.json",
+  "limits": [
+    "No full live Jev-to-native route proof",
+    "New production Codex core/MCP composition not live tested",
+    "Full desired catalog not installed",
+    "No desktop proof",
+    "No global installation",
+    "Security, coexistence, rollback, CI and outcome benchmark gates pending"
+  ],
+  "consent": "synthetic-only; no new external provider calls in this checkpoint",
+  "pinned_sdk_unittest": {
+    "sdk_version": "0.7.5",
+    "tests": 520,
+    "status": "passed",
+    "skips": 0
+  }
+}

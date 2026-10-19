@@ -1,0 +1,1620 @@
+{
+  "schema_version": 1,
+  "status": "code_slice_measured_not_release_validation",
+  "recorded_at": "2026-10-19T22:13:16.070050+00:00",
+  "scope": "self_authored_code_generation_frozen_tests_direct_executor_not_native_worker_integration",
+  "host_version": "2.1.303",
+  "runtime": "claude",
+  "image": "sha256:54c85f3c47607a77f32adec749d3c81d1348bf25833671f512b26a9b6d778cb3",
+  "parent_baseline": {
+    "model": "sonnet",
+    "effort": "medium"
+  },
+  "arms": [
+    "original_heuristic",
+    "jev_policy",
+    "parent_selection",
+    "no_router_parent_baseline"
+  ],
+  "repeats": 2,
+  "fixture_sha256": "351ec635d0332f5b1ad454e26ecea12e9857ad75bbc3417b4213173b9d4be071",
+  "not_measured": [
+    "human_review/correction/rework",
+    "representative_real_project_quality",
+    "native_child_selection/inheritance",
+    "installed_hook_routing",
+    "Codex",
+    "desktop",
+    "subscription_quota/cost_savings",
+    "adversarially_tamper_proof_judging"
+  ],
+  "rows": [
+    {
+      "task_id": "normalize-tags",
+      "arm": "jev_policy",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.27
+      },
+      "selection_ms": 450.924584,
+      "jev_callback_attempts": 1,
+      "jev_ms": 447.552584,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 3395.874334,
+        "answer": {
+          "source": "def normalize_tags(text):\n    if not isinstance(text, str):\n        raise TypeError(\"text must be a str\")\n    seen = set()\n    result = []\n    for token in text.split(\",\"):\n        tag = token.strip().casefold()\n        if not tag or tag in seen:\n            continue\n        seen.add(tag)\n        result.append(tag)\n    return result\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 166,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1623
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.346577
+      },
+      "oracle_success": true,
+      "total_ms": 4194.411667,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "normalize-tags",
+      "arm": "parent_selection",
+      "repeat": 0,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 2709.408,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 1013
+        },
+        "fallback": false
+      },
+      "selection_ms": 2710.548542,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 4905.412083,
+        "answer": {
+          "source": "from typing import List\n\n\ndef _validate_text(text: object) -> str:\n    if isinstance(text, bool) or not isinstance(text, str):\n        raise TypeError(\n            f\"normalize_tags() expected str, got {type(text).__name__}\"\n        )\n    return text\n\n\ndef normalize_tags(text: str) -> List[str]:\n    \"\"\"Normalize a comma-separated string of tags.\n\n    Splits on commas, strips surrounding whitespace from each token,\n    applies Unicode case folding, drops empty tokens, and removes\n    duplicates while preserving the first occurrence.\n\n    Raises TypeError if ``text`` is not a str (bool is rejected explicitly).\n    \"\"\"\n    value = _validate_text(text)\n\n    seen = set()\n    result: List[str] = []\n    for raw in value.split(\",\"):\n        token = raw.strip().casefold()\n        if not token:\n            continue\n        if token in seen:\n            continue\n        seen.add(token)\n        result.append(token)\n    return result\n"
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 701,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1614
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.403482
+      },
+      "oracle_success": true,
+      "total_ms": 8020.513375,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "normalize-tags",
+      "arm": "original_heuristic",
+      "repeat": 0,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 0.339083,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5650.900042,
+        "answer": {
+          "source": "\"\"\"Normalize comma-separated tags.\"\"\"\n\n\ndef normalize_tags(text):\n    \"\"\"Normalize a comma-separated string of tags.\n\n    Splits on commas, strips surrounding whitespace, casefolds each token,\n    omits empty tokens and removes duplicates, keeping the first occurrence.\n\n    Raises TypeError if ``text`` is not a str (bool is rejected too).\n    \"\"\"\n    if not isinstance(text, str):\n        raise TypeError(\n            \"text must be a str, not {}\".format(type(text).__name__)\n        )\n\n    result = []\n    seen = set()\n    for raw in text.split(\",\"):\n        token = raw.strip().casefold()\n        if not token:\n            continue\n        if token in seen:\n            continue\n        seen.add(token)\n        result.append(token)\n    return result\n"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 385,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1613
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.368808
+      },
+      "oracle_success": true,
+      "total_ms": 6021.137375,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "dependency-batches",
+      "arm": "original_heuristic",
+      "repeat": 1,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 1.137208,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 10677.516042,
+        "answer": {
+          "source": "def topological_batches(dependencies):\n    \"\"\"Return deterministic topological batches (maximal ready layers).\n\n    dependencies: dict mapping nonempty str node -> list/tuple of nonempty str\n    prerequisite names, each of which must also be a key.\n    Raises ValueError on malformed input, missing references, or cycles.\n    \"\"\"\n    if type(dependencies) is not dict:\n        raise ValueError(\"dependencies must be a dict\")\n\n    prereqs = {}\n    for node, deps in dependencies.items():\n        if not isinstance(node, str) or not node:\n            raise ValueError(\"node names must be nonempty strings\")\n        if not isinstance(deps, (list, tuple)):\n            raise ValueError(\"prerequisites must be a list or tuple\")\n        seen = set()\n        for dep in deps:\n            if not isinstance(dep, str) or not dep:\n                raise ValueError(\"prerequisite names must be nonempty strings\")\n            seen.add(dep)\n        prereqs[node] = seen\n\n    for node, deps in prereqs.items():\n        for dep in deps:\n            if dep not in prereqs:\n                raise ValueError(\"missing dependency: %r\" % (dep,))\n        if node in deps:\n            raise ValueError(\"self dependency: %r\" % (node,))\n\n    dependents = {node: [] for node in prereqs}\n    indegree = {}\n    for node, deps in prereqs.items():\n        indegree[node] = len(deps)\n        for dep in deps:\n            dependents[dep].append(node)\n\n    batches = []\n    ready = sorted(node for node, deg in indegree.items() if deg == 0)\n    processed = 0\n    while ready:\n        batches.append(ready)\n        processed += len(ready)\n        next_ready = []\n        for node in ready:\n            for child in dependents[node]:\n                indegree[child] -= 1\n                if indegree[child] == 0:\n                    next_ready.append(child)\n        ready = sorted(next_ready)\n\n    if processed != len(prereqs):\n        raise ValueError(\"dependency graph contains a cycle\")\n    return batches\n"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 752,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1699
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.397171
+      },
+      "oracle_success": true,
+      "total_ms": 11079.46675,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "merge-ranges",
+      "arm": "jev_policy",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "preflight_recommendation",
+        "recommended_model": "sonnet",
+        "recommended_effort": "medium",
+        "fallback": false,
+        "confidence": 0.8
+      },
+      "selection_ms": 394.701708,
+      "jev_callback_attempts": 1,
+      "jev_ms": 393.338333,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 3891.134041,
+        "answer": {
+          "source": "def merge_ranges(ranges):\n    if not isinstance(ranges, (list, tuple)):\n        raise ValueError(\"ranges must be a list or tuple\")\n    items = []\n    for item in ranges:\n        if not isinstance(item, (list, tuple)) or len(item) != 2:\n            raise ValueError(\"each range must be a list or tuple of two ints\")\n        start, end = item\n        if type(start) is not int or type(end) is not int:\n            raise ValueError(\"bounds must be ints (bool not allowed)\")\n        if start > end:\n            raise ValueError(\"start must be <= end\")\n        items.append((start, end))\n    items.sort()\n    merged = []\n    for start, end in items:\n        if merged and start <= merged[-1][1]:\n            if end > merged[-1][1]:\n                merged[-1][1] = end\n        else:\n            merged.append([start, end])\n    return merged\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 341,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1701
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.386971
+      },
+      "oracle_success": true,
+      "total_ms": 4673.865708,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "merge-ranges",
+      "arm": "original_heuristic",
+      "repeat": 1,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 0.363541,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 7484.956542,
+        "answer": {
+          "source": "def _validate_bound(value):\n    if type(value) is not int:\n        raise ValueError(\"interval bounds must be exact integers (bool not allowed)\")\n    return value\n\n\ndef _validate_pair(pair):\n    if not isinstance(pair, (list, tuple)):\n        raise ValueError(\"each interval must be a list or tuple\")\n    if len(pair) != 2:\n        raise ValueError(\"each interval must have exactly two bounds\")\n    start = _validate_bound(pair[0])\n    end = _validate_bound(pair[1])\n    if start > end:\n        raise ValueError(\"interval start must be <= end\")\n    return start, end\n\n\ndef merge_ranges(ranges):\n    \"\"\"Merge closed integer intervals.\n\n    Intervals that overlap or share an endpoint get merged. Adjacent but\n    disjoint intervals such as [1, 2] and [3, 4] stay separate.\n    The caller's input is never changed. Returns a new sorted list of\n    [start, end] lists.\n    \"\"\"\n    if not isinstance(ranges, (list, tuple)):\n        raise ValueError(\"ranges must be a list or tuple\")\n\n    # Validate everything before doing any work, using copied values only.\n    pairs = [_validate_pair(pair) for pair in ranges]\n    if not pairs:\n        return []\n\n    pairs.sort()\n    merged = [[pairs[0][0], pairs[0][1]]]\n    for start, end in pairs[1:]:\n        last = merged[-1]\n        if start <= last[1]:\n            if end > last[1]:\n                last[1] = end\n        else:\n            merged.append([start, end])\n    return merged\n"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 650,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1692
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.331549
+      },
+      "oracle_success": true,
+      "total_ms": 7817.826458,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "merge-ranges",
+      "arm": "no_router_parent_baseline",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 0.266916,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5834.978417,
+        "answer": {
+          "source": "def _validate(ranges):\n    if not isinstance(ranges, (list, tuple)):\n        raise ValueError(\"ranges must be a list or tuple\")\n    clean = []\n    for item in ranges:\n        if not isinstance(item, (list, tuple)) or len(item) != 2:\n            raise ValueError(\"each range must be a list or tuple of two items\")\n        start, end = item[0], item[1]\n        if type(start) is not int or type(end) is not int:\n            raise ValueError(\"bounds must be ints\")\n        if start > end:\n            raise ValueError(\"start must be <= end\")\n        clean.append((start, end))\n    return clean\n\n\ndef merge_ranges(ranges):\n    clean = _validate(ranges)\n    if not clean:\n        return []\n    clean.sort()\n    merged = [[clean[0][0], clean[0][1]]]\n    for start, end in clean[1:]:\n        last = merged[-1]\n        if start <= last[1]:\n            if end > last[1]:\n                last[1] = end\n        else:\n            merged.append([start, end])\n    return merged\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 398,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1699
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.312228
+      },
+      "oracle_success": true,
+      "total_ms": 6148.035625,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "dependency-batches",
+      "arm": "parent_selection",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 3270.073708,
+        "answer": {
+          "model": "sonnet",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 77,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 1023
+        },
+        "fallback": false
+      },
+      "selection_ms": 3270.644084,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5053.324625,
+        "answer": {
+          "source": "def topological_batches(dependencies):\n    if type(dependencies) is not dict and not isinstance(dependencies, dict):\n        raise ValueError(\"dependencies must be a dict\")\n    graph = {}\n    for node, prereqs in dependencies.items():\n        if not isinstance(node, str) or not node:\n            raise ValueError(\"node names must be nonempty strings\")\n        if not isinstance(prereqs, (list, tuple)):\n            raise ValueError(\"prerequisites must be a list or tuple\")\n        for p in prereqs:\n            if not isinstance(p, str) or not p:\n                raise ValueError(\"prerequisite names must be nonempty strings\")\n        graph[node] = set(prereqs)\n    for node, prereqs in graph.items():\n        for p in prereqs:\n            if p not in graph:\n                raise ValueError(\"missing dependency: %r\" % (p,))\n            if p == node:\n                raise ValueError(\"self dependency: %r\" % (node,))\n    dependents = {n: [] for n in graph}\n    remaining = {}\n    for node, prereqs in graph.items():\n        remaining[node] = len(prereqs)\n        for p in prereqs:\n            dependents[p].append(node)\n    ready = sorted(n for n, c in remaining.items() if c == 0)\n    result = []\n    done = 0\n    while ready:\n        result.append(ready)\n        done += len(ready)\n        nxt = []\n        for n in ready:\n            for d in dependents[n]:\n                remaining[d] -= 1\n                if remaining[d] == 0:\n                    nxt.append(d)\n        ready = sorted(nxt)\n    if done != len(graph):\n        raise ValueError(\"cycle detected\")\n    return result\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 614,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1698
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.399697
+      },
+      "oracle_success": true,
+      "total_ms": 8725.088708,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "normalize-tags",
+      "arm": "parent_selection",
+      "repeat": 1,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 5220.486417,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 904,
+          "cache_creation_input_tokens": 654
+        },
+        "fallback": false
+      },
+      "selection_ms": 5221.185125,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 6849.969917,
+        "answer": {
+          "source": "def normalize_tags(text):\n    \"\"\"Normalize a comma-separated string of tags.\n\n    Splits on commas, strips surrounding whitespace, applies Unicode case\n    folding, drops empty tokens, and removes duplicates while preserving the\n    first occurrence of each tag.\n\n    Raises TypeError if text is not a str (bool is rejected explicitly).\n    \"\"\"\n    if isinstance(text, bool) or not isinstance(text, str):\n        raise TypeError(\n            f\"normalize_tags() expects str, got {type(text).__name__}\"\n        )\n\n    seen = set()\n    result = []\n    for raw in text.split(\",\"):\n        token = raw.strip()\n        if not token:\n            continue\n        token = token.casefold()\n        if token in seen:\n            continue\n        seen.add(token)\n        result.append(token)\n    return result\n"
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 650,
+          "cache_read_input_tokens": 968,
+          "cache_creation_input_tokens": 649
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.37283
+      },
+      "oracle_success": true,
+      "total_ms": 12445.327459,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "merge-ranges",
+      "arm": "parent_selection",
+      "repeat": 0,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 3091.910209,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 1031
+        },
+        "fallback": false
+      },
+      "selection_ms": 3092.481167,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 9659.941542,
+        "answer": {
+          "source": "def _validate_int(value, name):\n    if type(value) is not int:\n        raise ValueError(f\"{name} must be an exact int, got {type(value).__name__}\")\n\n\ndef _normalize(ranges):\n    if not isinstance(ranges, (list, tuple)):\n        raise ValueError(\"ranges must be a list or tuple\")\n\n    normalized = []\n    for index, pair in enumerate(ranges):\n        if not isinstance(pair, (list, tuple)):\n            raise ValueError(f\"ranges[{index}] must be a list or tuple\")\n        if len(pair) != 2:\n            raise ValueError(f\"ranges[{index}] must have exactly 2 elements\")\n        start, end = pair\n        _validate_int(start, f\"ranges[{index}][0]\")\n        _validate_int(end, f\"ranges[{index}][1]\")\n        if start > end:\n            raise ValueError(f\"ranges[{index}] has start greater than end\")\n        normalized.append((start, end))\n    return normalized\n\n\ndef merge_ranges(ranges):\n    \"\"\"Merge overlapping closed integer intervals.\n\n    Intervals that share an endpoint are merged (e.g. [1, 2] and [2, 3]),\n    while adjacent disjoint intervals (e.g. [1, 2] and [3, 4]) stay separate.\n    The input is never modified, and the result is a new sorted list of\n    [start, end] lists.\n    \"\"\"\n    intervals = _normalize(ranges)\n    if not intervals:\n        return []\n\n    intervals.sort()\n\n    merged = []\n    cur_start, cur_end = intervals[0]\n    for start, end in intervals[1:]:\n        if start <= cur_end:\n            if end > cur_end:\n                cur_end = end\n        else:\n            merged.append([cur_start, cur_end])\n            cur_start, cur_end = start, end\n    merged.append([cur_start, cur_end])\n    return merged\n"
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 1982,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1693
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.321624
+      },
+      "oracle_success": true,
+      "total_ms": 13075.167,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "dependency-batches",
+      "arm": "no_router_parent_baseline",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 0.41475,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5355.03075,
+        "answer": {
+          "source": "def topological_batches(dependencies):\n    if type(dependencies) is not dict and not isinstance(dependencies, dict):\n        raise ValueError(\"dependencies must be a dict\")\n    graph = {}\n    for node, prereqs in dependencies.items():\n        if not isinstance(node, str) or not node:\n            raise ValueError(\"node names must be nonempty strings\")\n        if not isinstance(prereqs, (list, tuple)):\n            raise ValueError(\"prerequisites must be a list or tuple\")\n        for p in prereqs:\n            if not isinstance(p, str) or not p:\n                raise ValueError(\"prerequisite names must be nonempty strings\")\n        graph[node] = set(prereqs)\n    for node, prereqs in graph.items():\n        for p in prereqs:\n            if p not in graph:\n                raise ValueError(\"missing dependency: %r\" % (p,))\n    dependents = {n: [] for n in graph}\n    remaining = {}\n    for node, prereqs in graph.items():\n        remaining[node] = len(prereqs)\n        for p in prereqs:\n            dependents[p].append(node)\n    ready = sorted(n for n, c in remaining.items() if c == 0)\n    result = []\n    done = 0\n    while ready:\n        result.append(ready)\n        done += len(ready)\n        nxt = []\n        for n in ready:\n            for d in dependents[n]:\n                remaining[d] -= 1\n                if remaining[d] == 0:\n                    nxt.append(d)\n        ready = sorted(nxt)\n    if done != len(graph):\n        raise ValueError(\"cycle detected\")\n    return result\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 585,
+          "cache_read_input_tokens": 1050,
+          "cache_creation_input_tokens": 658
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.360593
+      },
+      "oracle_success": true,
+      "total_ms": 5716.955583,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "merge-ranges",
+      "arm": "jev_policy",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "preflight_recommendation",
+        "recommended_model": "sonnet",
+        "recommended_effort": "medium",
+        "fallback": false,
+        "confidence": 0.79
+      },
+      "selection_ms": 405.685666,
+      "jev_callback_attempts": 1,
+      "jev_ms": 404.227625,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 9544.631916,
+        "answer": {
+          "source": "def merge_ranges(ranges):\n    \"\"\"Merge closed integer intervals. Returns new sorted list of [start, end] lists.\n\n    Intervals overlapping (including shared endpoints) are merged; adjacent\n    disjoint ones such as [1, 2] and [3, 4] stay separate.\n    \"\"\"\n    if not isinstance(ranges, (list, tuple)):\n        raise ValueError(\"ranges must be a list or tuple\")\n    pairs = []\n    for item in ranges:\n        if not isinstance(item, (list, tuple)) or len(item) != 2:\n            raise ValueError(\"each range must be a list/tuple pair\")\n        start, end = item[0], item[1]\n        if type(start) is not int or type(end) is not int:\n            raise ValueError(\"bounds must be ints\")\n        if start > end:\n            raise ValueError(\"start must be <= end\")\n        pairs.append((start, end))\n    pairs.sort()\n    merged = []\n    for start, end in pairs:\n        if merged and start <= merged[-1][1]:\n            if end > merged[-1][1]:\n                merged[-1][1] = end\n        else:\n            merged.append([start, end])\n    return merged\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 435,
+          "cache_read_input_tokens": 1043,
+          "cache_creation_input_tokens": 652
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.377582
+      },
+      "oracle_success": true,
+      "total_ms": 10329.085208,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "merge-ranges",
+      "arm": "no_router_parent_baseline",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 0.4005,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 20939.525417,
+        "answer": {
+          "source": "def _validate(ranges):\n    if not isinstance(ranges, (list, tuple)):\n        raise ValueError(\"ranges must be a list or tuple\")\n    pairs = []\n    for item in ranges:\n        if not isinstance(item, (list, tuple)) or len(item) != 2:\n            raise ValueError(\"each range must be a list or tuple of two bounds\")\n        start, end = item\n        if type(start) is not int or type(end) is not int:\n            raise ValueError(\"bounds must be exact integers\")\n        if start > end:\n            raise ValueError(\"start must be <= end\")\n        pairs.append((start, end))\n    return pairs\n\n\ndef merge_ranges(ranges):\n    pairs = _validate(ranges)\n    if not pairs:\n        return []\n    pairs.sort()\n    merged = [[pairs[0][0], pairs[0][1]]]\n    for start, end in pairs[1:]:\n        last = merged[-1]\n        if start <= last[1]:\n            if end > last[1]:\n                last[1] = end\n        else:\n            merged.append([start, end])\n    return merged\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 404,
+          "cache_read_input_tokens": 1043,
+          "cache_creation_input_tokens": 653
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.466383
+      },
+      "oracle_success": true,
+      "total_ms": 21407.672083,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "dependency-batches",
+      "arm": "no_router_parent_baseline",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 0.714208,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5729.496916,
+        "answer": {
+          "source": "def topological_batches(dependencies):\n    if type(dependencies) is not dict and not isinstance(dependencies, dict):\n        raise ValueError(\"dependencies must be a dict\")\n    graph = {}\n    for node, prereqs in dependencies.items():\n        if not isinstance(node, str) or not node:\n            raise ValueError(\"node names must be nonempty strings\")\n        if not isinstance(prereqs, (list, tuple)):\n            raise ValueError(\"prerequisites must be a list or tuple\")\n        for p in prereqs:\n            if not isinstance(p, str) or not p:\n                raise ValueError(\"prerequisite names must be nonempty strings\")\n        graph[node] = set(prereqs)\n    for node, prereqs in graph.items():\n        for p in prereqs:\n            if p not in graph:\n                raise ValueError(\"missing dependency: %r\" % (p,))\n    dependents = {n: [] for n in graph}\n    indegree = {}\n    for node, prereqs in graph.items():\n        indegree[node] = len(prereqs)\n        for p in prereqs:\n            dependents[p].append(node)\n    ready = sorted(n for n, d in indegree.items() if d == 0)\n    result = []\n    processed = 0\n    while ready:\n        result.append(ready)\n        processed += len(ready)\n        nxt = []\n        for n in ready:\n            for m in dependents[n]:\n                indegree[m] -= 1\n                if indegree[m] == 0:\n                    nxt.append(m)\n        ready = sorted(nxt)\n    if processed != len(graph):\n        raise ValueError(\"dependency graph contains a cycle\")\n    return result\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 594,
+          "cache_read_input_tokens": 1050,
+          "cache_creation_input_tokens": 653
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.482429
+      },
+      "oracle_success": true,
+      "total_ms": 6213.820416,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "dependency-batches",
+      "arm": "parent_selection",
+      "repeat": 0,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 5688.803708,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 914,
+          "cache_creation_input_tokens": 654
+        },
+        "fallback": false
+      },
+      "selection_ms": 5689.455292,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 10844.965459,
+        "answer": {
+          "source": "def _require_name(value, what):\n    if not isinstance(value, str) or len(value) == 0:\n        raise ValueError(f\"{what} must be a nonempty str, got {value!r}\")\n    return value\n\n\ndef topological_batches(dependencies):\n    if not isinstance(dependencies, dict):\n        raise ValueError(\"dependencies must be a dict\")\n\n    prerequisites = {}\n    for node, prereqs in dependencies.items():\n        _require_name(node, \"node name\")\n        if not isinstance(prereqs, (list, tuple)):\n            raise ValueError(\n                f\"prerequisites for {node!r} must be a list or tuple, \"\n                f\"got {type(prereqs).__name__}\"\n            )\n        cleaned = set()\n        for prereq in prereqs:\n            _require_name(prereq, f\"prerequisite of {node!r}\")\n            cleaned.add(prereq)\n        prerequisites[node] = cleaned\n\n    for node in sorted(prerequisites):\n        prereqs = prerequisites[node]\n        if node in prereqs:\n            raise ValueError(f\"self dependency on {node!r}\")\n        missing = sorted(p for p in prereqs if p not in prerequisites)\n        if missing:\n            raise ValueError(f\"missing dependencies for {node!r}: {missing}\")\n\n    indegree = {}\n    dependents = {node: [] for node in prerequisites}\n    for node, prereqs in prerequisites.items():\n        indegree[node] = len(prereqs)\n        for prereq in prereqs:\n            dependents[prereq].append(node)\n\n    batches = []\n    processed = 0\n    current = sorted(node for node, count in indegree.items() if count == 0)\n    while current:\n        batches.append(list(current))\n        processed += len(current)\n        newly_ready = []\n        for node in current:\n            for dependent in dependents[node]:\n                indegree[dependent] -= 1\n                if indegree[dependent] == 0:\n                    newly_ready.append(dependent)\n        current = sorted(newly_ready)\n\n    if processed != len(prerequisites):\n        raise ValueError(\"dependency cycle detected\")\n\n    return batches\n"
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 2250,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1702
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.373901
+      },
+      "oracle_success": true,
+      "total_ms": 16909.52825,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "normalize-tags",
+      "arm": "no_router_parent_baseline",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 0.552583,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5497.285708,
+        "answer": {
+          "source": "def normalize_tags(text):\n    \"\"\"Normalize a comma-separated string of tags.\n\n    Splits on commas, strips whitespace, casefolds, drops empty tokens,\n    and deduplicates while preserving first occurrence order.\n    \"\"\"\n    if not isinstance(text, str) or isinstance(text, bool):\n        raise TypeError(\"text must be a str\")\n    seen = set()\n    result = []\n    for token in text.split(\",\"):\n        tag = token.strip().casefold()\n        if not tag or tag in seen:\n            continue\n        seen.add(tag)\n        result.append(tag)\n    return result\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 246,
+          "cache_read_input_tokens": 968,
+          "cache_creation_input_tokens": 650
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.338538
+      },
+      "oracle_success": true,
+      "total_ms": 5837.023292,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "normalize-tags",
+      "arm": "original_heuristic",
+      "repeat": 1,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 0.706417,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 6529.303291,
+        "answer": {
+          "source": "\"\"\"Normalize comma-separated tags.\"\"\"\n\nfrom typing import List\n\n\ndef normalize_tags(text: str) -> List[str]:\n    \"\"\"Normalize a comma-separated string of tags.\n\n    Splits on commas, strips surrounding whitespace from each token,\n    applies Unicode case folding, drops empty tokens, and removes\n    duplicates while keeping the first occurrence of each.\n\n    Raises:\n        TypeError: if ``text`` is not a str (bool and other types included).\n    \"\"\"\n    if not isinstance(text, str) or isinstance(text, bool):\n        raise TypeError(\n            \"normalize_tags() expects a str, got {}\".format(type(text).__name__)\n        )\n\n    seen = set()\n    result: List[str] = []\n    for raw in text.split(\",\"):\n        token = raw.strip().casefold()\n        if not token:\n            continue\n        if token in seen:\n            continue\n        seen.add(token)\n        result.append(token)\n    return result\n"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 454,
+          "cache_read_input_tokens": 968,
+          "cache_creation_input_tokens": 652
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.389952
+      },
+      "oracle_success": true,
+      "total_ms": 6920.866375,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "dependency-batches",
+      "arm": "original_heuristic",
+      "repeat": 0,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 0.681291,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 13065.699375,
+        "answer": {
+          "source": "def topological_batches(dependencies):\n    if not isinstance(dependencies, dict):\n        raise ValueError(\"dependencies must be a dict\")\n\n    prereqs = {}\n    for node, deps in dependencies.items():\n        if not isinstance(node, str) or not node:\n            raise ValueError(\"node names must be nonempty strings\")\n        if not isinstance(deps, (list, tuple)):\n            raise ValueError(\"prerequisites must be a list or tuple\")\n        seen = set()\n        for dep in deps:\n            if not isinstance(dep, str) or not dep:\n                raise ValueError(\"prerequisite names must be nonempty strings\")\n            seen.add(dep)\n        prereqs[node] = seen\n\n    for node, deps in prereqs.items():\n        for dep in deps:\n            if dep not in prereqs:\n                raise ValueError(\"missing dependency: %r\" % (dep,))\n            if dep == node:\n                raise ValueError(\"self dependency: %r\" % (node,))\n\n    indegree = {node: len(deps) for node, deps in prereqs.items()}\n    dependents = {node: [] for node in prereqs}\n    for node, deps in prereqs.items():\n        for dep in deps:\n            dependents[dep].append(node)\n\n    batches = []\n    ready = sorted(node for node, d in indegree.items() if d == 0)\n    processed = 0\n    while ready:\n        batches.append(ready)\n        processed += len(ready)\n        next_ready = []\n        for node in ready:\n            for child in dependents[node]:\n                indegree[child] -= 1\n                if indegree[child] == 0:\n                    next_ready.append(child)\n        ready = sorted(next_ready)\n\n    if processed != len(prereqs):\n        raise ValueError(\"dependency graph contains a cycle\")\n\n    return batches\n"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 997,
+          "cache_read_input_tokens": 1050,
+          "cache_creation_input_tokens": 650
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.380749
+      },
+      "oracle_success": true,
+      "total_ms": 13448.120875,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "merge-ranges",
+      "arm": "original_heuristic",
+      "repeat": 0,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 0.792042,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 7803.70775,
+        "answer": {
+          "source": "def _validate_bound(value):\n    if type(value) is not int:\n        raise ValueError(\"interval bounds must be exact int values (bool not allowed)\")\n    return value\n\n\ndef _validate_pair(pair):\n    if not isinstance(pair, (list, tuple)):\n        raise ValueError(\"each interval must be a list or tuple\")\n    if len(pair) != 2:\n        raise ValueError(\"each interval must contain exactly two bounds\")\n    start = _validate_bound(pair[0])\n    end = _validate_bound(pair[1])\n    if start > end:\n        raise ValueError(\"interval start must be <= end\")\n    return start, end\n\n\ndef merge_ranges(ranges):\n    \"\"\"Merge closed integer intervals.\n\n    Intervals that overlap, including ones that only share an endpoint, are\n    merged. Adjacent but disjoint intervals such as [1, 2] and [3, 4] stay\n    separate. The input is never modified. Returns a new sorted list of\n    [start, end] lists.\n    \"\"\"\n    if not isinstance(ranges, (list, tuple)):\n        raise ValueError(\"ranges must be a list or tuple\")\n\n    pairs = [_validate_pair(pair) for pair in ranges]\n    if not pairs:\n        return []\n\n    pairs.sort()\n    merged = []\n    cur_start, cur_end = pairs[0]\n    for start, end in pairs[1:]:\n        if start <= cur_end:\n            if end > cur_end:\n                cur_end = end\n        else:\n            merged.append([cur_start, cur_end])\n            cur_start, cur_end = start, end\n    merged.append([cur_start, cur_end])\n    return merged\n"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 648,
+          "cache_read_input_tokens": 1043,
+          "cache_creation_input_tokens": 652
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.298022
+      },
+      "oracle_success": true,
+      "total_ms": 8103.113917,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "dependency-batches",
+      "arm": "jev_policy",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.28
+      },
+      "selection_ms": 431.064875,
+      "jev_callback_attempts": 1,
+      "jev_ms": 429.389666,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 4600.308916,
+        "answer": {
+          "source": "def topological_batches(dependencies):\n    if type(dependencies) is not dict and not isinstance(dependencies, dict):\n        raise ValueError(\"dependencies must be a dict\")\n    graph = {}\n    for node, prereqs in dependencies.items():\n        if not isinstance(node, str) or not node:\n            raise ValueError(\"node names must be nonempty strings\")\n        if not isinstance(prereqs, (list, tuple)):\n            raise ValueError(\"prerequisites must be a list or tuple\")\n        for p in prereqs:\n            if not isinstance(p, str) or not p:\n                raise ValueError(\"prerequisite names must be nonempty strings\")\n        graph[node] = set(prereqs)\n    for node, prereqs in graph.items():\n        for p in prereqs:\n            if p not in graph:\n                raise ValueError(\"missing dependency: %r\" % (p,))\n    remaining = {n: set(p) for n, p in graph.items()}\n    result = []\n    while remaining:\n        ready = sorted(n for n, p in remaining.items() if not p)\n        if not ready:\n            raise ValueError(\"cycle detected\")\n        result.append(ready)\n        done = set(ready)\n        for n in ready:\n            del remaining[n]\n        for p in remaining.values():\n            p -= done\n    return result\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 479,
+          "cache_read_input_tokens": 1050,
+          "cache_creation_input_tokens": 651
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.45031
+      },
+      "oracle_success": true,
+      "total_ms": 5482.753334,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "normalize-tags",
+      "arm": "no_router_parent_baseline",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 0.639041,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 6141.070583,
+        "answer": {
+          "source": "def normalize_tags(text):\n    if not isinstance(text, str):\n        raise TypeError(\"text must be a str\")\n    seen = set()\n    result = []\n    for token in text.split(\",\"):\n        tag = token.strip().casefold()\n        if not tag or tag in seen:\n            continue\n        seen.add(tag)\n        result.append(tag)\n    return result\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 166,
+          "cache_read_input_tokens": 968,
+          "cache_creation_input_tokens": 655
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.315518
+      },
+      "oracle_success": true,
+      "total_ms": 6457.77325,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "merge-ranges",
+      "arm": "parent_selection",
+      "repeat": 1,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 2563.671958,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 922,
+          "cache_creation_input_tokens": 654
+        },
+        "fallback": false
+      },
+      "selection_ms": 2564.547667,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 8792.089833,
+        "answer": {
+          "source": "\"\"\"Deterministic merging of closed integer intervals.\"\"\"\n\n\ndef _validate_pair(item, index):\n    \"\"\"Return a fresh (start, end) tuple for one caller-supplied range.\n\n    Raises ValueError for any malformed pair. Never modifies ``item``.\n    \"\"\"\n    if not isinstance(item, (list, tuple)):\n        raise ValueError(f\"range at index {index} must be a list or tuple\")\n    if len(item) != 2:\n        raise ValueError(f\"range at index {index} must have exactly two bounds\")\n    start, end = item[0], item[1]\n    if type(start) is not int or type(end) is not int:\n        raise ValueError(f\"range at index {index} has a non-integer bound\")\n    if start > end:\n        raise ValueError(f\"range at index {index} has start greater than end\")\n    return (start, end)\n\n\ndef merge_ranges(ranges):\n    \"\"\"Merge overlapping closed integer intervals.\n\n    ``ranges`` must be a list or tuple of ``[start, end]`` (or ``(start, end)``)\n    pairs with exact int bounds (bool is rejected) and ``start <= end``.\n\n    Intervals that overlap or share an endpoint are merged; adjacent but\n    disjoint intervals such as ``[1, 2]`` and ``[3, 4]`` remain separate.\n\n    Returns a new list of ``[start, end]`` lists sorted by start. The caller's\n    input is never modified, including when a ValueError is raised.\n    \"\"\"\n    if not isinstance(ranges, (list, tuple)):\n        raise ValueError(\"ranges must be a list or tuple\")\n\n    # Validate everything first so malformed input fails before any work.\n    normalized = [_validate_pair(item, i) for i, item in enumerate(ranges)]\n\n    # Sorting fresh tuples gives a deterministic order (start, then end).\n    normalized.sort()\n\n    merged = []\n    for start, end in normalized:\n        if merged and start <= merged[-1][1]:\n            # Overlap or shared endpoint: extend the current interval.\n            if end > merged[-1][1]:\n                merged[-1][1] = end\n        else:\n            merged.append([start, end])\n    return merged\n"
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 1736,
+          "cache_read_input_tokens": 1043,
+          "cache_creation_input_tokens": 652
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.388881
+      },
+      "oracle_success": true,
+      "total_ms": 11746.691042,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "dependency-batches",
+      "arm": "jev_policy",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.32
+      },
+      "selection_ms": 432.885291,
+      "jev_callback_attempts": 1,
+      "jev_ms": 431.284833,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5624.842834,
+        "answer": {
+          "source": "def topological_batches(dependencies):\n    if type(dependencies) is not dict and not isinstance(dependencies, dict):\n        raise ValueError(\"dependencies must be a dict\")\n    graph = {}\n    for node, prereqs in dependencies.items():\n        if not isinstance(node, str) or not node:\n            raise ValueError(\"node names must be nonempty strings\")\n        if not isinstance(prereqs, (list, tuple)):\n            raise ValueError(\"prerequisites must be a list or tuple\")\n        for p in prereqs:\n            if not isinstance(p, str) or not p:\n                raise ValueError(\"prerequisite names must be nonempty strings\")\n        graph[node] = set(prereqs)\n    for node, prereqs in graph.items():\n        for p in prereqs:\n            if p not in graph:\n                raise ValueError(\"missing dependency: %r\" % (p,))\n            if p == node:\n                raise ValueError(\"self dependency: %r\" % (node,))\n    dependents = {n: [] for n in graph}\n    remaining = {}\n    for node, prereqs in graph.items():\n        remaining[node] = len(prereqs)\n        for p in prereqs:\n            dependents[p].append(node)\n    ready = sorted(n for n, c in remaining.items() if c == 0)\n    result = []\n    done = 0\n    while ready:\n        result.append(ready)\n        done += len(ready)\n        nxt = []\n        for n in ready:\n            for d in dependents[n]:\n                remaining[d] -= 1\n                if remaining[d] == 0:\n                    nxt.append(d)\n        ready = sorted(nxt)\n    if done != len(graph):\n        raise ValueError(\"cycle detected\")\n    return result\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 614,
+          "cache_read_input_tokens": 1050,
+          "cache_creation_input_tokens": 655
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.32513
+      },
+      "oracle_success": true,
+      "total_ms": 6383.604292,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    },
+    {
+      "task_id": "normalize-tags",
+      "arm": "jev_policy",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.25
+      },
+      "selection_ms": 399.41125,
+      "jev_callback_attempts": 1,
+      "jev_ms": 397.636917,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5931.865541,
+        "answer": {
+          "source": "def normalize_tags(text):\n    \"\"\"Normalize a comma-separated string of tags.\n\n    Splits on commas, strips whitespace, casefolds, drops empty tokens,\n    and deduplicates while preserving first occurrence order.\n    \"\"\"\n    if not isinstance(text, str):\n        raise TypeError(\"text must be a str, got %s\" % type(text).__name__)\n    seen = set()\n    result = []\n    for token in text.split(\",\"):\n        tag = token.strip().casefold()\n        if not tag or tag in seen:\n            continue\n        seen.add(tag)\n        result.append(tag)\n    return result\n"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 248,
+          "cache_read_input_tokens": 968,
+          "cache_creation_input_tokens": 653
+        }
+      },
+      "grading": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.371268
+      },
+      "oracle_success": true,
+      "total_ms": 6703.5365,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "human_rework": null
+    }
+  ],
+  "fixture_validation": {
+    "normalize-tags": {
+      "reference": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.377628
+      },
+      "broken": {
+        "passed": false,
+        "status": "failed",
+        "exit_code": 1,
+        "tests_run": 5,
+        "failures": 4,
+        "errors": 1,
+        "skipped": 0,
+        "output_bytes": 3107,
+        "cleanup_verified": true,
+        "duration_seconds": 0.305981
+      }
+    },
+    "merge-ranges": {
+      "reference": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.335657
+      },
+      "broken": {
+        "passed": false,
+        "status": "failed",
+        "exit_code": 1,
+        "tests_run": 5,
+        "failures": 4,
+        "errors": 1,
+        "skipped": 0,
+        "output_bytes": 3456,
+        "cleanup_verified": true,
+        "duration_seconds": 0.311478
+      }
+    },
+    "dependency-batches": {
+      "reference": {
+        "passed": true,
+        "status": "passed",
+        "exit_code": 0,
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 183,
+        "cleanup_verified": true,
+        "duration_seconds": 0.285716
+      },
+      "broken": {
+        "passed": false,
+        "status": "failed",
+        "exit_code": 1,
+        "tests_run": 5,
+        "failures": 5,
+        "errors": 0,
+        "skipped": 0,
+        "output_bytes": 3439,
+        "cleanup_verified": true,
+        "duration_seconds": 0.298637
+      }
+    }
+  },
+  "summary": {
+    "original_heuristic": {
+      "attempts": 6,
+      "oracle_successes": 6,
+      "descriptive_empirical_success_range": {
+        "method": "descriptive_empirical_task_cluster_bootstrap",
+        "clusters": 3,
+        "resamples": 2000,
+        "lower": 1.0,
+        "upper": 1.0,
+        "warning": "not_calibrated_success_CI; three_purposive_clusters; all_success_range_degenerates; no_reliability_or_noninferiority_inference"
+      },
+      "total_wall_ms": {
+        "p50": 7817.826458,
+        "p95": 13448.120875
+      },
+      "jev_callback_attempts": 0,
+      "native_call_results": 6,
+      "usage_counters_not_quota": {
+        "input_tokens": {
+          "observed_sum": 12,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "output_tokens": {
+          "observed_sum": 3886,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_read_input_tokens": {
+          "observed_sum": 3061,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_creation_input_tokens": {
+          "observed_sum": 6958,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        }
+      },
+      "human_rework": null
+    },
+    "jev_policy": {
+      "attempts": 6,
+      "oracle_successes": 6,
+      "descriptive_empirical_success_range": {
+        "method": "descriptive_empirical_task_cluster_bootstrap",
+        "clusters": 3,
+        "resamples": 2000,
+        "lower": 1.0,
+        "upper": 1.0,
+        "warning": "not_calibrated_success_CI; three_purposive_clusters; all_success_range_degenerates; no_reliability_or_noninferiority_inference"
+      },
+      "total_wall_ms": {
+        "p50": 5482.753334,
+        "p95": 10329.085208
+      },
+      "jev_callback_attempts": 6,
+      "native_call_results": 6,
+      "usage_counters_not_quota": {
+        "input_tokens": {
+          "observed_sum": 12,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "output_tokens": {
+          "observed_sum": 2283,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_read_input_tokens": {
+          "observed_sum": 4111,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_creation_input_tokens": {
+          "observed_sum": 5935,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        }
+      },
+      "human_rework": null
+    },
+    "parent_selection": {
+      "attempts": 6,
+      "oracle_successes": 6,
+      "descriptive_empirical_success_range": {
+        "method": "descriptive_empirical_task_cluster_bootstrap",
+        "clusters": 3,
+        "resamples": 2000,
+        "lower": 1.0,
+        "upper": 1.0,
+        "warning": "not_calibrated_success_CI; three_purposive_clusters; all_success_range_degenerates; no_reliability_or_noninferiority_inference"
+      },
+      "total_wall_ms": {
+        "p50": 11746.691042,
+        "p95": 16909.52825
+      },
+      "jev_callback_attempts": 0,
+      "native_call_results": 12,
+      "usage_counters_not_quota": {
+        "input_tokens": {
+          "observed_sum": 24,
+          "calls_with_counter": 12,
+          "calls_missing_counter": 0
+        },
+        "output_tokens": {
+          "observed_sum": 8390,
+          "calls_with_counter": 12,
+          "calls_missing_counter": 0
+        },
+        "cache_read_input_tokens": {
+          "observed_sum": 6383,
+          "calls_with_counter": 12,
+          "calls_missing_counter": 0
+        },
+        "cache_creation_input_tokens": {
+          "observed_sum": 13037,
+          "calls_with_counter": 12,
+          "calls_missing_counter": 0
+        }
+      },
+      "human_rework": null
+    },
+    "no_router_parent_baseline": {
+      "attempts": 6,
+      "oracle_successes": 6,
+      "descriptive_empirical_success_range": {
+        "method": "descriptive_empirical_task_cluster_bootstrap",
+        "clusters": 3,
+        "resamples": 2000,
+        "lower": 1.0,
+        "upper": 1.0,
+        "warning": "not_calibrated_success_CI; three_purposive_clusters; all_success_range_degenerates; no_reliability_or_noninferiority_inference"
+      },
+      "total_wall_ms": {
+        "p50": 6148.035625,
+        "p95": 21407.672083
+      },
+      "jev_callback_attempts": 0,
+      "native_call_results": 6,
+      "usage_counters_not_quota": {
+        "input_tokens": {
+          "observed_sum": 12,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "output_tokens": {
+          "observed_sum": 2393,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_read_input_tokens": {
+          "observed_sum": 5079,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_creation_input_tokens": {
+          "observed_sum": 4968,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        }
+      },
+      "human_rework": null
+    }
+  },
+  "collector_hashes": {
+    "harness_sha256": "38381935d206dfb2701b0998dfb95186d2df151661e8ceabd19e33e1917b4f7a",
+    "grader_sha256": "dba22b808879e11b15645982c589b580b61eeec66e4810515c0c6364e43a1934",
+    "strategy_harness_sha256": "d984a7357140596bd4832148e61374c0835b0a7aa476c503b844c4f91a760747"
+  },
+  "report_source_hashes": {
+    "scripts/spikes/code_outcome_benchmark.py": "a8e03cbe1a968ac0b32574de070f9cb3afe6de4e19d463de8e8f1df0cbf88d6a",
+    "scripts/spikes/code_grader.py": "8f548e30798b024a9a009946371c3973cd2c2fe4dc35b300b49f7cb07cca576c",
+    "scripts/spikes/task_outcome_pilot.py": "318231386da5be9d9a977ad34582808c269b30aa251508411c8c05f0b448391e"
+  },
+  "post_review_validation": {
+    "all_24_rows_exactly_five_tests_and_cleanup": true,
+    "native_calls_repeated": false,
+    "note": "Expected test-count guard and bounded-native-capture hardening landed after collection; independent saved-row verification passes."
+  },
+  "offline_sdk_suite": {
+    "tests": 710,
+    "skipped": 0,
+    "passed": true,
+    "log_sha256": "e0ff5f66778ef08f4236635cea1d55cdfd21f698588bea581ab63cc1f423847b"
+  }
+}

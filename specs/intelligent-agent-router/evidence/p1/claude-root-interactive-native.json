@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "runtime": "claude",
+  "host_version": "2.1.303",
+  "surface": "cli-interactive",
+  "exit_code": 0,
+  "session_start_model_present": true,
+  "visible_native_warning": true,
+  "root_warning_count": 1,
+  "completed_user_turns": 2,
+  "classification_calls": 1,
+  "continuation_additional_calls": 0,
+  "external_jev_calls": 0,
+  "root_before": {
+    "model": "claude-haiku-5-5",
+    "effort": "medium"
+  },
+  "root_after": {
+    "model": "claude-haiku-5-5",
+    "effort": "medium"
+  },
+  "root_observation_source": "official statusLine independent test-only observation; native SessionStart supplies production model",
+  "root_mutation_output": false,
+  "boundary_results": [
+    {
+      "phase": "unknown",
+      "reason": "session_start"
+    },
+    {
+      "phase": "new_task",
+      "reason": "standalone_initial_objective"
+    },
+    {
+      "phase": "unknown",
+      "reason": "stop_not_completion"
+    },
+    {
+      "phase": "continuation",
+      "reason": "clear_acknowledgement"
+    },
+    {
+      "phase": "unknown",
+      "reason": "stop_not_completion"
+    },
+    {
+      "phase": "unknown",
+      "reason": "session_end"
+    }
+  ],
+  "private_fixture": "/private/var/folders/gy/4fqff5xd3k51nnccz76xsqcm0000gn/T/router-claude-status-probe-tbkr2_wi",
+  "partial_terminal_capture_sha256": "286341f5048f9b38ecc6030153817014312e4128c777231447310dcbcbd7b81f",
+  "fixture_sha256": "8bf7b281e52a6fc14afce2c87da1fe82e5e5a708cda25317e45a6d91bfb2746e",
+  "global_plugin_installation": false,
+  "production_transcript_parsing": false,
+  "not_proven": [
+    "Print-mode cold-root warning (known missing model)",
+    "Desktop",
+    "Live Jev",
+    "Full packaged installation",
+    "Same-model effort upgrade before first Stop"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "recorded_at": "2026-10-19T21:39:02.850449+00:00",
+  "runtime": "claude",
+  "host_version": "2.1.303",
+  "surface": "cli",
+  "plugin_version": "0.1.0+1252d3d88eb1",
+  "native_strict_validation": "passed",
+  "lifecycle": {
+    "marketplace_add": true,
+    "install": true,
+    "listed_enabled": true,
+    "disable_listed_false": true,
+    "uninstall": true,
+    "final_installed_plugins_empty": true,
+    "marketplace_remove": true,
+    "version_cache_retained": true
+  },
+  "installation_scope": "fresh isolated CLAUDE_CONFIG_DIR, not principal plugin settings",
+  "packaged_execution": {
+    "native_plugin_inventory_recognized": true,
+    "loaded_from_native_installed_cache": true,
+    "completed": true,
+    "root_model": "claude-haiku-5-5",
+    "root_effort_requested": "medium",
+    "assessment_reason": "no_consent_or_payload",
+    "external_jev_calls": 0,
+    "legacy_autoswitch_modules_included": false,
+    "root_mutation_output": false
+  },
+  "emergency_disable": {
+    "completed": true,
+    "state_bytes_and_mtimes_unchanged": true
+  },
+  "offline_sdk_suite": {
+    "tests": 683,
+    "skipped": 0,
+    "passed": true,
+    "log_sha256": "59d7f8e17c99d52895f0da2e980d43c841151b990b2cdaef5177483a176eafc8"
+  },
+  "private_fixture": "/private/var/folders/gy/4fqff5xd3k51nnccz76xsqcm0000gn/T/router-claude-status-probe-tbkr2_wi",
+  "artifact_build_sha256": "c931ee7956e072b324c22c3dfde784367ee0a8dc72e9dde78c443c2942fec38d",
+  "not_proven": [
+    "Claude worker auto rewrite through a production conflict profile (runtime profile unsupported)",
+    "Desktop",
+    "Full live Jev-to-worker packaged chain",
+    "Native on-request permission/coexistence matrix",
+    "Remote CI"
+  ]
+}

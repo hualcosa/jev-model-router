@@ -1,0 +1,79 @@
+=== Model Router Hook - Integration Tests ===
+
+--- Suite 1: Default behavior ---
+  PASS: architecture prompt routes to opus from sonnet
+  PASS: confident mechanical prompt downroutes to haiku from sonnet
+  PASS: confident mechanical prompt downroutes to haiku from opus
+  PASS: implementation prompt up-routes sonnet session to opus
+  PASS: implementation prompt up-routes haiku session to opus
+  PASS: tilde prefix bypasses all routing
+
+--- Suite 2: Custom config (extend mode) ---
+  PASS: user-defined keyword triggers opus
+  PASS: built-in keyword still works in extend mode
+
+--- Suite 3: Custom config (replace mode) ---
+  PASS: default architecture keywords removed in replace mode, allow
+  PASS: user-defined replace keyword triggers opus
+
+--- Suite 4: remove_keywords ---
+  PASS: 'analyze' removed from defaults, allow
+  PASS: other default architecture keywords still work
+
+--- Suite 5: Threshold overrides ---
+  PASS: non-task filler with a mechanical keyword abstains
+
+--- Suite 6: Project overrides global ---
+  PASS: project long_prompt_words=10 wins over global=500
+
+--- Suite 7: Invalid JSON graceful fallback ---
+  PASS: invalid JSON config falls back to defaults, opus still routes
+
+--- Suite 8: System prompts (XML-tagged) always pass through ---
+  PASS: task-notification with sonnet keywords passes through
+  PASS: task-notification with haiku keywords passes through on opus
+  PASS: system-reminder tag passes through
+
+--- Suite 9: Extreme -> opus/max, effort message, [1m] suffix ---
+  PASS: extreme prompt on sonnet suggests opus
+  PASS: extreme warn emits /effort max
+  PASS: tier change drops [1m] suffix from /model opus
+  PASS: tier-change suggestion still carries /effort
+  PASS: effort distance 1 mismatch stays silent
+  PASS: effort distance 2 mismatch warns
+  PASS: effort distance 2 warn suggests /effort xhigh
+  PASS: same-tier effort change keeps [1m] suffix on /model opus
+  PASS: same-tier effort change still suggests /effort xhigh
+
+--- Suite 10: PreToolUse subagent rewrite + respect ---
+  PASS: plugin-context generic spawn rewrites to scoped routed-haiku + model haiku
+  PASS: plugin root without agents file falls back to bare routed-haiku
+  PASS: uninstalled variant degrades to model-only injection
+  PASS: manual-install generic spawn rewrites to unscoped routed-haiku + model haiku
+  PASS: custom subagent_type gets model-only injection, type untouched
+  PASS: explicit caller model yields no updatedInput
+  PASS: explicit empty-string model yields no updatedInput
+  PASS: abstain prompt passes through with no output
+  PASS: CLAUDE_MODEL_ROUTER_CHILD guard exits 0 with no output
+  PASS: malformed stdin exits 0 with no output
+
+--- Suite 11: Autoswitch writes settings for new sessions ---
+  PASS: autoswitch tier mismatch exits 2 with opus notice
+  PASS: autoswitch stderr claims new sessions, not live switch
+  PASS: autoswitch writes model+effortLevel, preserves foreign key
+
+--- Suite 12: Max effort and Fable autoswitch stay non-persistent ---
+  PASS: max effort decision warns instead of persisting xhigh
+  PASS: max effort warning explains why no settings write occurred
+  PASS: max effort leaves settings.json unwritten
+  PASS: custom fable target with gate off warns instead of writing
+  PASS: custom fable gate leaves settings.json unwritten
+
+--- Suite 13: Corrupt settings.json degrades autoswitch to warn ---
+  PASS: corrupt settings.json degrades autoswitch to warn
+  PASS: corrupt settings.json left byte-identical
+
+--- Suite 15: Capability gate blocks haiku downroute on main path ---
+  PASS: handoff/multi-agent prompt does not downroute sonnet to haiku
+
+Results: 48 passed, 0 failed

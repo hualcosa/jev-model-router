@@ -1,0 +1,1487 @@
+{
+  "schema_version": 1,
+  "status": "pilot_measured_not_release_validation",
+  "recorded_at": "2026-10-19T21:59:34.108982+00:00",
+  "scope": "synthetic_code_review_direct_executor_pilot_not_native_worker_integration",
+  "fixture_sha256": "1ccf987f87cc97ec47d3db89a25dbdd4e4339cb1c9c9f6cbefb57185a1e6e89b",
+  "runtime": "claude",
+  "host_version": "2.1.303",
+  "parent_baseline": {
+    "model": "sonnet",
+    "effort": "medium"
+  },
+  "arms": [
+    "original_heuristic",
+    "jev_policy",
+    "parent_selection",
+    "no_router_parent_baseline"
+  ],
+  "repeats": 2,
+  "rows": [
+    {
+      "task_id": "stable-dedupe",
+      "arm": "no_router_parent_baseline",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 0.8935,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 3265.644542,
+        "answer": {
+          "bug_line": 2,
+          "counterexample": {
+            "values": [
+              3,
+              1,
+              3,
+              2
+            ],
+            "target": null
+          },
+          "expected_json": "[3,1,2]",
+          "actual_json": "[1,2,3]"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 155,
+          "cache_read_input_tokens": 640,
+          "cache_creation_input_tokens": 1116
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 3267.352083,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "stable-dedupe",
+      "arm": "jev_policy",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.66
+      },
+      "selection_ms": 432.553708,
+      "jev_callback_attempts": 1,
+      "jev_ms": 429.30425,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 4830.609833,
+        "answer": {
+          "bug_line": 2,
+          "counterexample": {
+            "values": [
+              3,
+              1,
+              3,
+              2
+            ],
+            "target": null
+          },
+          "expected_json": "[3,1,2]",
+          "actual_json": "[1,2,3]"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 155,
+          "cache_read_input_tokens": 640,
+          "cache_creation_input_tokens": 1110
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 5263.995,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "binary-search-boundary",
+      "arm": "jev_policy",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.62
+      },
+      "selection_ms": 432.835958,
+      "jev_callback_attempts": 1,
+      "jev_ms": 429.252125,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 7785.122333,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              1
+            ],
+            "target": 1
+          },
+          "expected_json": "0",
+          "actual_json": "-1"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 289,
+          "cache_read_input_tokens": 640,
+          "cache_creation_input_tokens": 1209
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 8218.502583,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "binary-search-boundary",
+      "arm": "no_router_parent_baseline",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 2.828375,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 6177.79075,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              1
+            ],
+            "target": 1
+          },
+          "expected_json": "0",
+          "actual_json": "-1"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 300,
+          "cache_read_input_tokens": 1193,
+          "cache_creation_input_tokens": 654
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 6181.287333,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "binary-search-boundary",
+      "arm": "parent_selection",
+      "repeat": 1,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 4927.653708,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1570
+        },
+        "fallback": false
+      },
+      "selection_ms": 4930.89575,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 4270.134416,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              5
+            ],
+            "target": 5
+          },
+          "expected_json": "\"0\"",
+          "actual_json": "\"-1\""
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 465,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1851
+        }
+      },
+      "oracle_success": false,
+      "total_ms": 9201.961375,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "failure_analysis": {
+        "bug_line_correct": true,
+        "counterexample_proves_violation": true,
+        "expected_reported_type": "str",
+        "actual_reported_type": "str",
+        "reason": "return_value_JSON_type_mismatch"
+      }
+    },
+    {
+      "task_id": "stable-dedupe",
+      "arm": "original_heuristic",
+      "repeat": 1,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 4.233375,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 6830.30425,
+        "answer": {
+          "bug_line": 2,
+          "counterexample": {
+            "values": [
+              3,
+              1,
+              3,
+              2
+            ],
+            "target": null
+          },
+          "expected_json": "[3, 1, 2]",
+          "actual_json": "[1, 2, 3]"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 320,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 1748
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 6835.006292,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "stable-dedupe",
+      "arm": "no_router_parent_baseline",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 2.594,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 4578.340959,
+        "answer": {
+          "bug_line": 2,
+          "counterexample": {
+            "values": [
+              3,
+              1,
+              3,
+              2
+            ],
+            "target": null
+          },
+          "expected_json": "[3, 1, 2]",
+          "actual_json": "[1, 2, 3]"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 162,
+          "cache_read_input_tokens": 1100,
+          "cache_creation_input_tokens": 655
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 4581.357709,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "stable-dedupe",
+      "arm": "parent_selection",
+      "repeat": 0,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 3296.2055,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 1027
+        },
+        "fallback": false
+      },
+      "selection_ms": 3297.288542,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 3758.844625,
+        "answer": {
+          "bug_line": 2,
+          "counterexample": {
+            "values": [
+              3,
+              1,
+              2,
+              3
+            ],
+            "target": null
+          },
+          "expected_json": "[3, 1, 2]",
+          "actual_json": "[1, 2, 3]"
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 352,
+          "cache_read_input_tokens": 640,
+          "cache_creation_input_tokens": 1114
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 7056.932875,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "strict-positive",
+      "arm": "jev_policy",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.31
+      },
+      "selection_ms": 465.391334,
+      "jev_callback_attempts": 1,
+      "jev_ms": 463.672792,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5018.027791,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              0,
+              5
+            ],
+            "target": null
+          },
+          "expected_json": "5",
+          "actual_json": "0"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 140,
+          "cache_read_input_tokens": 640,
+          "cache_creation_input_tokens": 1117
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 5483.97,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "strict-positive",
+      "arm": "no_router_parent_baseline",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 0.50375,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 2942.246958,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              0,
+              5
+            ],
+            "target": null
+          },
+          "expected_json": "5",
+          "actual_json": "0"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 140,
+          "cache_read_input_tokens": 1101,
+          "cache_creation_input_tokens": 658
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 2943.499166,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "strict-positive",
+      "arm": "jev_policy",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.31
+      },
+      "selection_ms": 388.911458,
+      "jev_callback_attempts": 1,
+      "jev_ms": 384.427792,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 5360.022291,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              0,
+              5
+            ],
+            "target": null
+          },
+          "expected_json": "5",
+          "actual_json": "0"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 139,
+          "cache_read_input_tokens": 1101,
+          "cache_creation_input_tokens": 652
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 5749.337417,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "binary-search-boundary",
+      "arm": "parent_selection",
+      "repeat": 0,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 4553.634625,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 913,
+          "cache_creation_input_tokens": 656
+        },
+        "fallback": false
+      },
+      "selection_ms": 4556.546167,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 4799.121916,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              1,
+              3,
+              5
+            ],
+            "target": 5
+          },
+          "expected_json": "2",
+          "actual_json": "-1"
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 620,
+          "cache_read_input_tokens": 1193,
+          "cache_creation_input_tokens": 656
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 9356.075334,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "binary-search-boundary",
+      "arm": "original_heuristic",
+      "repeat": 0,
+      "requested": {
+        "model": "opus",
+        "effort": "high"
+      },
+      "selection": {
+        "class": "debugging",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 3.0535,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 9173.374459,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              5
+            ],
+            "target": 5
+          },
+          "expected_json": "0",
+          "actual_json": "-1"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 503,
+          "cache_read_input_tokens": 640,
+          "cache_creation_input_tokens": 1202
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 9176.901291,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "binary-search-boundary",
+      "arm": "jev_policy",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.53
+      },
+      "selection_ms": 380.734958,
+      "jev_callback_attempts": 1,
+      "jev_ms": 379.433583,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 10797.122791,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              1
+            ],
+            "target": 1
+          },
+          "expected_json": "0",
+          "actual_json": "-1"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 300,
+          "cache_read_input_tokens": 1193,
+          "cache_creation_input_tokens": 659
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 11178.517416,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "stable-dedupe",
+      "arm": "parent_selection",
+      "repeat": 1,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 2453.89575,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 911,
+          "cache_creation_input_tokens": 655
+        },
+        "fallback": false
+      },
+      "selection_ms": 2454.727375,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 3638.164625,
+        "answer": {
+          "bug_line": 2,
+          "counterexample": {
+            "values": [
+              3,
+              1,
+              2
+            ],
+            "target": null
+          },
+          "expected_json": "\"[3, 1, 2]\"",
+          "actual_json": "\"[1, 2, 3]\""
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 332,
+          "cache_read_input_tokens": 1100,
+          "cache_creation_input_tokens": 656
+        }
+      },
+      "oracle_success": false,
+      "total_ms": 6093.764209,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "failure_analysis": {
+        "bug_line_correct": true,
+        "counterexample_proves_violation": true,
+        "expected_reported_type": "str",
+        "actual_reported_type": "str",
+        "reason": "return_value_JSON_type_mismatch"
+      }
+    },
+    {
+      "task_id": "stable-dedupe",
+      "arm": "original_heuristic",
+      "repeat": 0,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 0.52775,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 18496.831834,
+        "answer": {
+          "bug_line": 2,
+          "counterexample": {
+            "values": [
+              3,
+              1,
+              3,
+              2
+            ],
+            "target": null
+          },
+          "expected_json": "[3, 1, 2]",
+          "actual_json": "[1, 2, 3]"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 360,
+          "cache_read_input_tokens": 1100,
+          "cache_creation_input_tokens": 651
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 18498.106208,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "strict-positive",
+      "arm": "parent_selection",
+      "repeat": 1,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 3158.507917,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 544,
+          "cache_creation_input_tokens": 1020
+        },
+        "fallback": false
+      },
+      "selection_ms": 3161.623542,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 3401.570041,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              0,
+              5
+            ],
+            "target": null
+          },
+          "expected_json": "5",
+          "actual_json": "0"
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 235,
+          "cache_read_input_tokens": 640,
+          "cache_creation_input_tokens": 1115
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 6564.023833,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "binary-search-boundary",
+      "arm": "original_heuristic",
+      "repeat": 1,
+      "requested": {
+        "model": "opus",
+        "effort": "high"
+      },
+      "selection": {
+        "class": "debugging",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 1.169459,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 10231.087833,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              5
+            ],
+            "target": 5
+          },
+          "expected_json": "0",
+          "actual_json": "-1"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 554,
+          "cache_read_input_tokens": 1193,
+          "cache_creation_input_tokens": 646
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 10233.070709,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "strict-positive",
+      "arm": "original_heuristic",
+      "repeat": 1,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 1.309958,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 7301.859875,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              0,
+              5
+            ],
+            "target": null
+          },
+          "expected_json": "5",
+          "actual_json": "0"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 340,
+          "cache_read_input_tokens": 640,
+          "cache_creation_input_tokens": 1112
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 7303.961083,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "strict-positive",
+      "arm": "no_router_parent_baseline",
+      "repeat": 0,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 3.267209,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 4351.513,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              0,
+              5
+            ],
+            "target": null
+          },
+          "expected_json": "5",
+          "actual_json": "0"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 139,
+          "cache_read_input_tokens": 1101,
+          "cache_creation_input_tokens": 654
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 4355.179792,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "strict-positive",
+      "arm": "original_heuristic",
+      "repeat": 0,
+      "requested": {
+        "model": "opus",
+        "effort": "medium"
+      },
+      "selection": {
+        "class": "implementation",
+        "fallback": false,
+        "scope": "original_heuristic_only_cli_tiebreak_disabled"
+      },
+      "selection_ms": 1.382958,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 7877.217958,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              0,
+              5
+            ],
+            "target": null
+          },
+          "expected_json": "5",
+          "actual_json": "0"
+        },
+        "observed_models": [
+          "claude-opus-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 272,
+          "cache_read_input_tokens": 1101,
+          "cache_creation_input_tokens": 648
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 7879.546542,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "stable-dedupe",
+      "arm": "jev_policy",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {
+        "reason_code": "low_confidence",
+        "recommended_model": null,
+        "recommended_effort": null,
+        "fallback": true,
+        "confidence": 0.64
+      },
+      "selection_ms": 433.537542,
+      "jev_callback_attempts": 1,
+      "jev_ms": 430.393583,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 3758.513667,
+        "answer": {
+          "bug_line": 2,
+          "counterexample": {
+            "values": [
+              3,
+              1,
+              3,
+              2
+            ],
+            "target": null
+          },
+          "expected_json": "[3, 1, 2]",
+          "actual_json": "[1, 2, 3]"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 162,
+          "cache_read_input_tokens": 1100,
+          "cache_creation_input_tokens": 655
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 4192.844125,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "binary-search-boundary",
+      "arm": "no_router_parent_baseline",
+      "repeat": 1,
+      "requested": {
+        "model": "sonnet",
+        "effort": "medium"
+      },
+      "selection": {},
+      "selection_ms": 2.792917,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 6149.6865,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              1
+            ],
+            "target": 1
+          },
+          "expected_json": "0",
+          "actual_json": "-1"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 294,
+          "cache_read_input_tokens": 1193,
+          "cache_creation_input_tokens": 655
+        }
+      },
+      "oracle_success": true,
+      "total_ms": 6153.219292,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed"
+    },
+    {
+      "task_id": "strict-positive",
+      "arm": "parent_selection",
+      "repeat": 0,
+      "requested": {
+        "model": "haiku",
+        "effort": "medium"
+      },
+      "selection": {
+        "status": "completed",
+        "elapsed_ms": 7480.393667,
+        "answer": {
+          "model": "haiku",
+          "effort": "medium"
+        },
+        "observed_models": [
+          "claude-sonnet-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 76,
+          "cache_read_input_tokens": 905,
+          "cache_creation_input_tokens": 658
+        },
+        "fallback": false
+      },
+      "selection_ms": 7481.299125,
+      "jev_callback_attempts": 0,
+      "jev_ms": null,
+      "execution": {
+        "status": "completed",
+        "elapsed_ms": 3173.37025,
+        "answer": {
+          "bug_line": 3,
+          "counterexample": {
+            "values": [
+              0,
+              5
+            ],
+            "target": null
+          },
+          "expected_json": "\"5\"",
+          "actual_json": "\"0\""
+        },
+        "observed_models": [
+          "claude-haiku-5-5"
+        ],
+        "observed_effort": null,
+        "usage": {
+          "input_tokens": 2,
+          "output_tokens": 239,
+          "cache_read_input_tokens": 1101,
+          "cache_creation_input_tokens": 653
+        }
+      },
+      "oracle_success": false,
+      "total_ms": 10655.497542,
+      "human_rework": null,
+      "orchestrator_execution_attempts": 1,
+      "orchestrator_retries": 0,
+      "native_or_provider_internal_retries": "not_observed",
+      "failure_analysis": {
+        "bug_line_correct": true,
+        "counterexample_proves_violation": true,
+        "expected_reported_type": "str",
+        "actual_reported_type": "str",
+        "reason": "return_value_JSON_type_mismatch"
+      }
+    }
+  ],
+  "not_measured": [
+    "accepted_code_changes/test_quality",
+    "human_correction/rework",
+    "native_child_inheritance",
+    "automatic_hook_routing",
+    "Codex",
+    "desktop",
+    "representative_engineering_quality",
+    "subscription_cost/savings"
+  ],
+  "provenance": "self_authored_synthetic_public_task_payloads_only",
+  "summary": {
+    "original_heuristic": {
+      "attempts": 6,
+      "oracle_successes": 6,
+      "descriptive_empirical_success_range": {
+        "method": "descriptive_empirical_task_cluster_bootstrap",
+        "clusters": 3,
+        "resamples": 2000,
+        "lower": 1.0,
+        "upper": 1.0,
+        "warning": "not_calibrated_success_CI; three_purposive_clusters; all_success_range_degenerates; no_reliability_or_noninferiority_inference"
+      },
+      "total_wall_ms": {
+        "p50": 7879.546542,
+        "p95": 18498.106208
+      },
+      "jev_callback_attempts": 0,
+      "native_call_results": 6,
+      "usage_counters_not_quota": {
+        "input_tokens": {
+          "observed_sum": 12,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "output_tokens": {
+          "observed_sum": 2349,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_read_input_tokens": {
+          "observed_sum": 4674,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_creation_input_tokens": {
+          "observed_sum": 6007,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        }
+      },
+      "human_rework": null
+    },
+    "jev_policy": {
+      "attempts": 6,
+      "oracle_successes": 6,
+      "descriptive_empirical_success_range": {
+        "method": "descriptive_empirical_task_cluster_bootstrap",
+        "clusters": 3,
+        "resamples": 2000,
+        "lower": 1.0,
+        "upper": 1.0,
+        "warning": "not_calibrated_success_CI; three_purposive_clusters; all_success_range_degenerates; no_reliability_or_noninferiority_inference"
+      },
+      "total_wall_ms": {
+        "p50": 5483.97,
+        "p95": 11178.517416
+      },
+      "jev_callback_attempts": 6,
+      "native_call_results": 6,
+      "usage_counters_not_quota": {
+        "input_tokens": {
+          "observed_sum": 12,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "output_tokens": {
+          "observed_sum": 1185,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_read_input_tokens": {
+          "observed_sum": 5314,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_creation_input_tokens": {
+          "observed_sum": 5402,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        }
+      },
+      "human_rework": null
+    },
+    "parent_selection": {
+      "attempts": 6,
+      "oracle_successes": 3,
+      "descriptive_empirical_success_range": {
+        "method": "descriptive_empirical_task_cluster_bootstrap",
+        "clusters": 3,
+        "resamples": 2000,
+        "lower": 0.5,
+        "upper": 0.5,
+        "warning": "not_calibrated_success_CI; three_purposive_clusters; all_success_range_degenerates; no_reliability_or_noninferiority_inference"
+      },
+      "total_wall_ms": {
+        "p50": 7056.932875,
+        "p95": 10655.497542
+      },
+      "jev_callback_attempts": 0,
+      "native_call_results": 12,
+      "usage_counters_not_quota": {
+        "input_tokens": {
+          "observed_sum": 24,
+          "calls_with_counter": 12,
+          "calls_missing_counter": 0
+        },
+        "output_tokens": {
+          "observed_sum": 2699,
+          "calls_with_counter": 12,
+          "calls_missing_counter": 0
+        },
+        "cache_read_input_tokens": {
+          "observed_sum": 8491,
+          "calls_with_counter": 12,
+          "calls_missing_counter": 0
+        },
+        "cache_creation_input_tokens": {
+          "observed_sum": 11631,
+          "calls_with_counter": 12,
+          "calls_missing_counter": 0
+        }
+      },
+      "human_rework": null
+    },
+    "no_router_parent_baseline": {
+      "attempts": 6,
+      "oracle_successes": 6,
+      "descriptive_empirical_success_range": {
+        "method": "descriptive_empirical_task_cluster_bootstrap",
+        "clusters": 3,
+        "resamples": 2000,
+        "lower": 1.0,
+        "upper": 1.0,
+        "warning": "not_calibrated_success_CI; three_purposive_clusters; all_success_range_degenerates; no_reliability_or_noninferiority_inference"
+      },
+      "total_wall_ms": {
+        "p50": 4355.179792,
+        "p95": 6181.287333
+      },
+      "jev_callback_attempts": 0,
+      "native_call_results": 6,
+      "usage_counters_not_quota": {
+        "input_tokens": {
+          "observed_sum": 12,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "output_tokens": {
+          "observed_sum": 1190,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_read_input_tokens": {
+          "observed_sum": 6328,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        },
+        "cache_creation_input_tokens": {
+          "observed_sum": 4392,
+          "calls_with_counter": 6,
+          "calls_missing_counter": 0
+        }
+      },
+      "human_rework": null
+    }
+  },
+  "report_updated_at": "2026-10-19T22:00:51.194333+00:00",
+  "collection_harness_sha256": "351fe541c9511d0a71260e916eec9a79bf5d1bdb59cef456d1ac0d421a77f19b",
+  "report_harness_sha256": "5e4667faf8f204029a5567c3cc88c16047ee2c22404cdc6c62f466c33e0f7a2a",
+  "report_postprocessing": "No native calls repeated. Renamed runner retry/attempt fields, clarified empirical bootstrap limits, summed parent+worker usage, added exact type-error analysis. Collector launch-failure handling hardened after collection; no native launch failures occurred.",
+  "offline_sdk_suite": {
+    "tests": 699,
+    "skipped": 0,
+    "passed": true,
+    "log_sha256": "a7a42bb09775a0f628d3994e537d8908822c67ec683677c369f93cf27149e364"
+  }
+}

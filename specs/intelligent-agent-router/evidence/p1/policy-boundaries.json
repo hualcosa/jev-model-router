@@ -1,0 +1,37 @@
+{
+  "tasks": [
+    "RTE-011",
+    "RTE-014",
+    "RTE-015",
+    "RTE-016",
+    "RTE-018",
+    "RTE-019"
+  ],
+  "golden_policy_cases": 28,
+  "policy_safety_matrix_cases": 384,
+  "focused_test_methods": {
+    "policy": 9,
+    "boundary": 28,
+    "spawn": 24
+  },
+  "full_default": {
+    "tests": 466,
+    "failures": 0,
+    "skipped": 2
+  },
+  "full_pinned_sdk": {
+    "tests": 466,
+    "failures": 0,
+    "skipped": 0
+  },
+  "integration": "All reviewed accepted code in primary local main; no commits. Isolated writer original patches preserved.",
+  "routing_proof": "Pure/injected-provider tests only; not native production adapters",
+  "limits": [
+    "cross-process state and dedupe pending RTE020",
+    "visible warnings and warning dedupe pending RTE021",
+    "native adapter/runtime and desktop E2E pending",
+    "ordinal rankings and score thresholds are uncalibrated priors",
+    "fixture model IDs fake, not runtime support evidence",
+    "representative corpus/outcome evaluation pending RTE035/RTE037"
+  ]
+}

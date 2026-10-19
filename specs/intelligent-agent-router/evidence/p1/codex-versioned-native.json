@@ -1,0 +1,44 @@
+{
+  "runtime": "codex",
+  "host_version": "0.163.0",
+  "surface": "cli",
+  "fixture": "shared_core_preparation_mcp_policy_state_native_adapter",
+  "status": "passed",
+  "errors": [],
+  "classification_calls": 1,
+  "preparation_calls": 1,
+  "native_spawn_calls": 1,
+  "native_message_opaque": true,
+  "external_jev_calls": 0,
+  "parent": {
+    "model": "gpt-6.1-sol",
+    "effort": "low",
+    "approval_policy": "never",
+    "sandbox_policy": {
+      "type": "read-only"
+    }
+  },
+  "child": {
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "approval_policy": "never",
+    "sandbox_policy": {
+      "type": "read-only"
+    }
+  },
+  "actual_model_source": "native SubagentStart/Stop and synthetic host turn_context",
+  "effort_permission_source": "test-only synthetic turn_context; never parsed by production adapter",
+  "not_proven": [
+    "live Jev E2E",
+    "desktop",
+    "on-request approval compatibility",
+    "all model versions",
+    "other hook coexistence",
+    "cryptographic equality of prepared and opaque task"
+  ],
+  "exit_code": 0,
+  "native_trust_bypassed": false,
+  "native_hook_definitions_changed": false,
+  "private_synthetic_artifacts": "/var/folders/gy/4fqff5xd3k51nnccz76xsqcm0000gn/T/router-p0-codex-oxphrbkh/core-smoke-evidence-nwcebxx0",
+  "trust_warning_observed": false
+}

@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "provenance": "Manually authored synthetic policy expectations before implementation; not benchmark measurements or verified real model snapshots. Fixture IDs must never be installed as catalog mappings.",
+  "cases": [
+    {
+      "id": "mechanical",
+      "runtime": "codex",
+      "tier": "T0",
+      "options": {},
+      "expected": {
+        "disposition": "route_worker",
+        "family": "luna",
+        "effort": "low"
+      }
+    },
+    {
+      "id": "standard",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {},
+      "expected": {
+        "disposition": "route_worker",
+        "family": "sol",
+        "effort": "medium"
+      }
+    },
+    {
+      "id": "difficult",
+      "runtime": "codex",
+      "tier": "T2",
+      "options": {},
+      "expected": {
+        "disposition": "route_worker",
+        "family": "sol",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "high_risk_short_task",
+      "runtime": "codex",
+      "tier": "T0",
+      "options": {
+        "risk": "high"
+      },
+      "expected": {
+        "disposition": "route_worker",
+        "family": "sol",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "complex_score_enforces_floor",
+      "runtime": "codex",
+      "tier": "T0",
+      "options": {
+        "complexity": 0.9
+      },
+      "expected": {
+        "disposition": "route_worker",
+        "family": "sol",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "same_model_more_reasoning",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "reasoning": 0.7
+      },
+      "expected": {
+        "disposition": "route_worker",
+        "family": "sol",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "frontier_requires_opt_in",
+      "runtime": "codex",
+      "tier": "T3",
+      "options": {},
+      "expected": {
+        "disposition": "defer",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "frontier_opt_in",
+      "runtime": "codex",
+      "tier": "T3",
+      "options": {
+        "frontier": true
+      },
+      "expected": {
+        "disposition": "route_worker",
+        "family": "astra",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "low_confidence",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "confidence": 0.5
+      },
+      "expected": {
+        "disposition": "defer",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "provider_abstains",
+      "runtime": "codex",
+      "tier": "abstain",
+      "options": {},
+      "expected": {
+        "disposition": "defer",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "pinned_empty_model",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "explicit_model": ""
+      },
+      "expected": {
+        "disposition": "skip",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "pinned_empty_effort",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "explicit_effort": ""
+      },
+      "expected": {
+        "disposition": "skip",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "custom_profile",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "custom": true
+      },
+      "expected": {
+        "disposition": "skip",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "missing_provider",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "provider": "unavailable"
+      },
+      "expected": {
+        "disposition": "defer",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "mechanical_claude",
+      "runtime": "claude",
+      "tier": "T0",
+      "options": {},
+      "expected": {
+        "disposition": "route_worker",
+        "family": "haiku",
+        "effort": "low"
+      }
+    },
+    {
+      "id": "implementation_claude",
+      "runtime": "claude",
+      "tier": "T1",
+      "options": {},
+      "expected": {
+        "disposition": "route_worker",
+        "family": "sonnet",
+        "effort": "medium"
+      }
+    },
+    {
+      "id": "architecture_claude",
+      "runtime": "claude",
+      "tier": "T2",
+      "options": {},
+      "expected": {
+        "disposition": "route_worker",
+        "family": "opus",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "frontier_claude",
+      "runtime": "claude",
+      "tier": "T3",
+      "options": {
+        "frontier": true
+      },
+      "expected": {
+        "disposition": "route_worker",
+        "family": "fable",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "unsupported_effort_advisory",
+      "runtime": "codex",
+      "tier": "T0",
+      "options": {
+        "no_effort": true
+      },
+      "expected": {
+        "disposition": "defer",
+        "family": "luna",
+        "effort": null
+      }
+    },
+    {
+      "id": "shadow_no_selected_route",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "mode": "shadow"
+      },
+      "expected": {
+        "disposition": "defer",
+        "family": "sol",
+        "effort": "medium"
+      }
+    },
+    {
+      "id": "disabled_no_assessment",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "mode": "disabled"
+      },
+      "expected": {
+        "disposition": "skip",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "warn_workers_disabled",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "mode": "warn"
+      },
+      "expected": {
+        "disposition": "skip",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "root_capability_gap",
+      "runtime": "codex",
+      "tier": "T2",
+      "options": {
+        "event": "root_prompt",
+        "active": "luna",
+        "active_effort": "low"
+      },
+      "expected": {
+        "disposition": "warn_root",
+        "family": "sol",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "root_effort_gap",
+      "runtime": "codex",
+      "tier": "T2",
+      "options": {
+        "event": "root_prompt",
+        "active": "sol",
+        "active_effort": "medium"
+      },
+      "expected": {
+        "disposition": "warn_root",
+        "family": "sol",
+        "effort": "high"
+      }
+    },
+    {
+      "id": "root_unknown_effort",
+      "runtime": "codex",
+      "tier": "T2",
+      "options": {
+        "event": "root_prompt",
+        "active": "sol",
+        "active_effort": null
+      },
+      "expected": {
+        "disposition": "defer",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "root_already_stronger",
+      "runtime": "codex",
+      "tier": "T1",
+      "options": {
+        "event": "root_prompt",
+        "active": "astra",
+        "active_effort": "high"
+      },
+      "expected": {
+        "disposition": "skip",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "wrong_generation",
+      "runtime": "codex",
+      "tier": "T2",
+      "options": {
+        "wrong_version": true
+      },
+      "expected": {
+        "disposition": "defer",
+        "family": null,
+        "effort": null
+      }
+    },
+    {
+      "id": "no_capability_downgrade",
+      "runtime": "codex",
+      "tier": "T2",
+      "options": {
+        "enabled": [
+          "codex.luna"
+        ]
+      },
+      "expected": {
+        "disposition": "defer",
+        "family": null,
+        "effort": null
+      }
+    }
+  ]
+}

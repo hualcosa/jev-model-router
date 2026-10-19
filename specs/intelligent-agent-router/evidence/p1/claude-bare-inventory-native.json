@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "recorded_at": "2026-10-19T21:49:47.792613+00:00",
+  "runtime": "claude",
+  "host_version": "2.1.303",
+  "surface": "cli",
+  "implementation": "router_core/claude_inventory.py",
+  "scope": "fresh_process_configured_candidates_not_originating_session_authority",
+  "candidate_sources": [
+    "localSettings",
+    "projectSettings",
+    "userSettings"
+  ],
+  "candidate_count": 3,
+  "all_candidates_disabled_by_bare": true,
+  "session_start_sentinel_executed": false,
+  "user_messages": 0,
+  "model_calls": 0,
+  "jev_calls": 0,
+  "principal_config_used": false,
+  "production_profile_enabled": false,
+  "private_fixture": "/var/folders/gy/4fqff5xd3k51nnccz76xsqcm0000gn/T/router-claude-bare-reader-0g15glwt",
+  "implementation_sha256": "41bab6e82a72a6fbbed0a6846eb867cdac4347ee452549ed92d4e3a109d31cf2",
+  "not_proven": [
+    "originating invocation-only settings and plugins",
+    "ephemeral skill and agent hooks",
+    "full effective hook inventory",
+    "production conflict authority",
+    "desktop"
+  ],
+  "offline_sdk_suite": {
+    "tests": 687,
+    "skipped": 0,
+    "passed": true,
+    "log_sha256": "624511b19a5fcfcc3b20bdb2fffc2a722c2223e20d7a9696e4a9af0b86646d73"
+  }
+}

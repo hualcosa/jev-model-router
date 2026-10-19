@@ -1,0 +1,2240 @@
+{
+  "schema_version": "rte035.v1",
+  "provenance": {
+    "authorship": "Manually authored synthetic scenarios; generated corpus file from hand-written case descriptions.",
+    "source": "RTE035 requirements and task-boundary requirements in product/evaluation specifications.",
+    "real_project_content": false,
+    "actual_success_dataset": false,
+    "provider_calls": false,
+    "benchmark_claim": false,
+    "labeling_policy": "Expectation labels are plan-derived ground truth; do not change labels to make an implementation pass.",
+    "primary_review": {
+      "adjudications": [
+        {
+          "sequence": "BOUNDARY-07",
+          "previous": "UNKNOWN",
+          "adjudicated": "NEW_TASK",
+          "reason": "Primary requirements adjudication: explicit initial review/explanation/log-analysis request is a logical task even without edits. Quoted command words alone are not the reason for NEW_TASK."
+        },
+        {
+          "sequence": "BOUNDARY-23",
+          "previous": "UNKNOWN",
+          "adjudicated": "NEW_TASK",
+          "reason": "Primary requirements adjudication: explicit initial review/explanation/log-analysis request is a logical task even without edits. Quoted command words alone are not the reason for NEW_TASK."
+        },
+        {
+          "sequence": "BOUNDARY-29",
+          "previous": "UNKNOWN",
+          "adjudicated": "NEW_TASK",
+          "reason": "Primary requirements adjudication: explicit initial review/explanation/log-analysis request is a logical task even without edits. Quoted command words alone are not the reason for NEW_TASK."
+        },
+        {
+          "sequence": "BOUNDARY-05",
+          "previous": "UNKNOWN",
+          "adjudicated": "NEW_TASK",
+          "reason": "Primary adjudication: explicit initial request for a summary is a task; the quoted /new-task text is not a structural marker. Read-only does not imply UNKNOWN."
+        }
+      ],
+      "negative_additions": "Three raw-quote/log cases without an explicit user request added separately. Read-only work is not automatically non-task.",
+      "multiturn_requirement": "Every sequence now contains at least two user prompt events, not just one event or only lifecycle records."
+    }
+  },
+  "task_cases": [
+    {
+      "id": "TASK-001",
+      "title": "Find the retry helper",
+      "description": "Locate the retry helper and report its file and callers without editing anything.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.15,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Verify paths and callers against repository symbols; no task execution claim.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-002",
+      "title": "Normalize a fixture suffix",
+      "description": "Rename only the three sample files ending in .fixture-old to .fixture; leave source files untouched.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.2,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Check exact rename set and clean diff scope.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-003",
+      "title": "Extract declared environment keys",
+      "description": "List environment-variable names read by the configuration loader; do not print their values.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "medium",
+        "reasoning": 0.25,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Compare names to loader references and confirm no values were emitted.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-004",
+      "title": "Sort one import block",
+      "description": "Sort the imports in the requested utility module, preserving grouping and behavior.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.2,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Run formatter or inspect a narrowly scoped diff.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-005",
+      "title": "Add a missing docstring",
+      "description": "Add a concise docstring to the public parse_date helper without changing its implementation.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.2,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Review diff; existing focused tests should remain unchanged.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-006",
+      "title": "Count duplicate keys",
+      "description": "Write a short read-only script that reports duplicate keys in a supplied JSON fixture.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.3,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "codex"
+      },
+      "outcome_verification": {
+        "notes": "Run against a synthetic input with duplicate and unique keys.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-007",
+      "title": "Update a changelog heading",
+      "description": "Change the release heading from Draft to Unreleased in the specified changelog section only.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.2,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Assert the target heading changed and unrelated headings did not.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-008",
+      "title": "Add a simple null guard",
+      "description": "Return an empty list when the optional tags argument is null; preserve current behavior for all non-null values.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.35,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Unit tests cover null, empty, and populated tags.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-009",
+      "title": "Document a CLI flag",
+      "description": "Document the existing --dry-run flag and its current default; do not add or alter CLI behavior.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.2,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Check help text and docs agree with parser configuration.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-010",
+      "title": "Repair a typo in a test label",
+      "description": "Correct the misspelling in one assertion message while keeping the assertion itself intact.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.15,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "claude"
+      },
+      "outcome_verification": {
+        "notes": "Diff shows only the intended literal correction.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-011",
+      "title": "Add a focused unit test",
+      "description": "Add a unit test showing that an empty search query returns no matches from the existing in-memory search function.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "low",
+        "reasoning": 0.45,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Run the focused test and nearby suite; inspect that no network was used.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-012",
+      "title": "Validate a date input",
+      "description": "Reject impossible calendar dates in the date parser while retaining its documented accepted formats.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.55,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Table-driven tests for leap day, impossible day, and valid legacy formats.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-013",
+      "title": "Add a pagination parameter",
+      "description": "Add an optional page_size parameter to the list endpoint, clamp it to the documented range, and keep the default response compatible.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.55,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "API tests for default, lower/upper bounds, and response compatibility.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-014",
+      "title": "Refactor repeated formatting",
+      "description": "Extract the identical timestamp formatting in two call sites into the existing shared formatter.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "low",
+        "reasoning": 0.5,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Compare outputs for timezone-aware, naive, and null inputs before/after.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-015",
+      "title": "Handle a missing optional field",
+      "description": "Allow older event records without the optional label field and expose a null label in normalized output.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.55,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Old and new record fixtures normalize deterministically.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-016",
+      "title": "Add a CSV export option",
+      "description": "Add a --format csv option to the report command while keeping JSON as the default output.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "low",
+        "reasoning": 0.55,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "codex"
+      },
+      "outcome_verification": {
+        "notes": "CLI contract tests verify default JSON and CSV escaping.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-017",
+      "title": "Cache a pure lookup",
+      "description": "Cache repeated lookups in the immutable in-memory registry and invalidate only when a new registry instance is created.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.6,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Test repeated lookup equivalence and registry isolation; no performance claim.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-018",
+      "title": "Support a second webhook event",
+      "description": "Parse the inventory.updated webhook using the existing event model; unknown event names must remain safely rejected.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.6,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Signed synthetic payload fixtures for supported and unknown event names.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-019",
+      "title": "Fix a flaky boundary test",
+      "description": "A test depends on dictionary iteration order; make its assertions order-independent without weakening expected membership.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "low",
+        "reasoning": 0.55,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Repeat focused test and verify it still fails if a member is removed.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-020",
+      "title": "Add accessible status text",
+      "description": "Expose the existing loading and error states with accessible text labels, preserving the current visual layout.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "low",
+        "reasoning": 0.55,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "claude"
+      },
+      "outcome_verification": {
+        "notes": "DOM accessibility assertions plus visual smoke; visual quality not inferred from unit tests.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-021",
+      "title": "Trace an intermittent timeout",
+      "description": "Find why a bounded request intermittently exceeds its timeout and propose the smallest safe fix after reproducing it locally.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "medium",
+        "reasoning": 0.78,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Repro harness, timeout-path tests, and before/after traces from local synthetic traffic.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-022",
+      "title": "Resolve a lost update race",
+      "description": "Two workers can overwrite each other's state updates; identify the race and make state transitions atomic without serializing unrelated keys.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.88,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Deterministic concurrency test with barriers; verify isolation across keys.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-023",
+      "title": "Review an authentication callback",
+      "description": "Review the OAuth callback for state validation, redirect handling, and token leakage; report concrete risks before suggesting edits.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.82,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Threat-model checklist and tests for invalid state and unsafe redirect; no real credentials.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-024",
+      "title": "Plan a schema migration",
+      "description": "Plan a migration that splits one nullable column into two fields while old and new application versions overlap.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.86,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Review expand/contract sequence, rollback path, and compatibility tests; plan only.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-025",
+      "title": "Debug a parser regression",
+      "description": "A parser now accepts a truncated record and later crashes; trace the regression and preserve the prior rejection contract.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "medium",
+        "reasoning": 0.8,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Regression fixture must fail before and pass after, with malformed neighbors retained.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-026",
+      "title": "Review permission inheritance",
+      "description": "Determine whether inherited tool permissions can broaden access after a nested delegation and recommend a least-privilege correction.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.9,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Enumerate permission paths and negative tests; do not execute delegated tools.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-027",
+      "title": "Design idempotent webhook processing",
+      "description": "Design idempotency for duplicate deliveries with out-of-order updates and a finite retention window.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.83,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "State-machine cases cover duplicates, reordering, expiry, and replay; design review only.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-028",
+      "title": "Investigate a memory leak",
+      "description": "A long-lived worker grows memory after repeated image metadata parsing; isolate retained objects and bound the cache safely.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "medium",
+        "reasoning": 0.8,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Synthetic repeated workload, object-retention evidence, and bounded-cache tests.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-029",
+      "title": "Audit a dependency update",
+      "description": "Assess whether a proposed major dependency update changes serialization or security defaults before updating the lockfile.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.78,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Compare pinned release notes and local API behavior; no network/package upgrade in this task.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-030",
+      "title": "Review financial rounding",
+      "description": "Review the invoice total calculation where a one-cent rounding error can alter settlement; specify exact decimal and rounding invariants.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.84,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "codex"
+      },
+      "outcome_verification": {
+        "notes": "Decimal-based edge cases and independent recomputation; synthetic amounts only.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-031",
+      "title": "Patch a short authorization bug",
+      "description": "One-line change: reject requests unless the actor owns the referenced account; do not trust a caller-supplied owner flag.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.82,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Negative authorization tests for forged owner, other account, and valid owner.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-032",
+      "title": "Assess destructive cleanup",
+      "description": "The cleanup command may delete a directory outside its configured root when given a symlink; analyze and constrain the deletion boundary.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.9,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Temporary-tree symlink tests prove outside sentinel is preserved; never run against user data.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-033",
+      "title": "Diagnose retry amplification",
+      "description": "Nested retry loops may multiply attempts during an outage; calculate worst-case calls and propose a bounded retry policy.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "medium",
+        "reasoning": 0.82,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Unit tests assert attempt ceiling and jitter bounds; no live service calls.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-034",
+      "title": "Review encrypted secret rotation",
+      "description": "Inspect key rotation so old ciphertext remains decryptable during rollout but retired keys cannot encrypt new records.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.9,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Synthetic key IDs and fixture ciphertext test read-old/write-new and retirement behavior.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-035",
+      "title": "Fix a deadlock in shutdown",
+      "description": "Shutdown can deadlock when a worker waits on a callback queued to the same executor; explain and patch the lock ordering.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.86,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "claude"
+      },
+      "outcome_verification": {
+        "notes": "Controlled executor test with timeout plus orderly shutdown assertions.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-036",
+      "title": "Integrate a third-party API",
+      "description": "Add a bounded client for a fictional catalog service with strict response validation, timeout, and no retry on non-idempotent writes.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.65,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Mock transport covers malformed response, timeout, and write retry policy; no external calls.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-037",
+      "title": "Build an event replay tool",
+      "description": "Create a local replay command that reads newline-delimited synthetic events and reports schema errors without modifying input files.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.62,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "codex"
+      },
+      "outcome_verification": {
+        "notes": "Temporary fixtures verify valid rows, invalid rows, and immutable inputs.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-038",
+      "title": "Refactor a shared cache API",
+      "description": "Replace two similar caches with one typed helper while preserving per-tenant isolation and independent eviction.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.8,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Cross-tenant isolation tests and eviction-order checks; no throughput claim.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-039",
+      "title": "Design a plugin trust boundary",
+      "description": "Define how a plugin manifest is validated before loading code, including versioning, permissions, and downgrade behavior.",
+      "expectation": {
+        "tier": "T3",
+        "risk": "high",
+        "reasoning": 0.95,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Architecture review against explicit adversarial cases; no implementation-quality claim.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-040",
+      "title": "Plan a zero-downtime data move",
+      "description": "Plan a multi-service data migration with dual writes, reconciliation, rollback, and partial regional failure handling.",
+      "expectation": {
+        "tier": "T3",
+        "risk": "high",
+        "reasoning": 0.96,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Review invariants, failure injection matrix, and cutover/rollback criteria; planning artifact only.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-041",
+      "title": "Investigate cross-service consistency",
+      "description": "Explain how to prevent stale reads across an asynchronous account ledger and notification service under retries and partial outages.",
+      "expectation": {
+        "tier": "T3",
+        "risk": "high",
+        "reasoning": 0.94,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "codex"
+      },
+      "outcome_verification": {
+        "notes": "Model event ordering, idempotency, and recovery; synthetic design review only.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-042",
+      "title": "Threat-model agent tool routing",
+      "description": "Assess a router that edits delegated tool arguments: identify confused-deputy, pin-bypass, and permission-broadening risks and design defenses.",
+      "expectation": {
+        "tier": "T3",
+        "risk": "high",
+        "reasoning": 0.97,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Adversarial checklist and invariant tests; no actual model/provider invocation.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-043",
+      "title": "Specify a privacy-preserving audit trail",
+      "description": "Design an audit format that supports incident reconstruction while excluding prompts, credentials, and sensitive payloads.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.91,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Data inventory, redaction tests, retention and access-control review.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-044",
+      "title": "Reconcile concurrent inventory writes",
+      "description": "Multiple regions can reserve the last item simultaneously; compare locking, escrow, and compensating transaction options.",
+      "expectation": {
+        "tier": "T3",
+        "risk": "high",
+        "reasoning": 0.93,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "State model proves no over-reservation under modeled interleavings; no production claim.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-045",
+      "title": "Assess a cryptographic format change",
+      "description": "Design a staged move from one authenticated encryption envelope to another while old clients are still active.",
+      "expectation": {
+        "tier": "T3",
+        "risk": "high",
+        "reasoning": 0.96,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Crypto review covers nonce, authentication, version dispatch, rollback, and key lifecycle; synthetic only.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-046",
+      "title": "Short high-risk refund guard",
+      "description": "In one line, reject a refund if it exceeds the settled amount; preserve idempotency and do not retry a possibly completed payment.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.88,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Synthetic ledger cases for below/equal/above amount and duplicate request; no real payment.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-047",
+      "title": "Short high-risk path traversal fix",
+      "description": "A short patch must reject archive entries that escape the extraction root, including encoded separators and symlink parents.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.91,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Temporary archive fixtures cover traversal encodings and symlink escape; outside sentinel preserved.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-048",
+      "title": "Unknown target catalog",
+      "description": "Choose a worker for a difficult migration, but the runtime's exact model/version catalog is missing; report safe behavior rather than guessing an ID.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.86,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Verify no model rewrite occurs without scoped catalog evidence; no fabricated runtime ID.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-049",
+      "title": "Unknown reasoning-effort support",
+      "description": "A standard refactor is ready to delegate, but the host schema does not say whether effort can be set; keep native arguments and disclose the support gap.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "low",
+        "reasoning": 0.58,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Schema-absence fixture proves no unsupported effort field is injected.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-050",
+      "title": "Respect an explicit model pin",
+      "description": "The generic code-review task arrives with an explicit model field; preserve the entire spawn without classification or edits.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "medium",
+        "reasoning": 0.72,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {
+          "model": "fixture-model-pin"
+        },
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Byte-for-byte argument comparison and zero classifier-call counter.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-051",
+      "title": "Respect an effort-only pin",
+      "description": "A small test-writing task has an explicit reasoning_effort value but no model; treat the non-null effort as a complete pin.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "low",
+        "reasoning": 0.45,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {
+          "reasoning_effort": "medium"
+        },
+        "runtime_applicability": "codex"
+      },
+      "outcome_verification": {
+        "notes": "Assert zero classification and no modifications to any spawn field.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-052",
+      "title": "Preserve custom agent profile",
+      "description": "An unpinned task requests a named custom agent profile whose capabilities are not verified; do not treat it as a generic worker.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.6,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {
+          "agent_type": "fixture-custom-profile"
+        },
+        "runtime_applicability": "claude"
+      },
+      "outcome_verification": {
+        "notes": "Unknown profile bypasses classification and preserves arguments.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-053",
+      "title": "Malformed host configuration",
+      "description": "The router config contains a duplicate JSON key and an unknown policy field; reject it safely and leave native delegation unchanged.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.62,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Malformed/duplicate/unknown-field inputs yield sanitized fail-open diagnostics.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-054",
+      "title": "Secret-shaped task text",
+      "description": "A synthetic task description includes a placeholder that resembles a credential; redact or refuse it before any external classifier boundary.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.8,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Test uses unmistakable fake placeholder only; inspect minimized payload and logs for leakage.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-055",
+      "title": "No-credential preflight",
+      "description": "Assess a proposed API integration without a configured classifier credential; explain the unavailable result and do not attempt network access.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.62,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Provider callback count remains zero or returns sanitized missing-key status; no network.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-056",
+      "title": "Shadow mode recommendation",
+      "description": "In shadow mode, assess a bounded search worker and record a recommendation without selecting a model or changing tool input.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.28,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Compare original and resulting spawn arguments; selected fields remain absent.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-057",
+      "title": "Missing runtime scope",
+      "description": "A reasonable coding task arrives without a trusted runtime and host-version scope; defer instead of borrowing another host's catalog.",
+      "expectation": {
+        "tier": "T1",
+        "risk": "medium",
+        "reasoning": 0.6,
+        "effort": "medium",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Scope mismatch returns safe defer and preserves native arguments.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-058",
+      "title": "Effort advisory only",
+      "description": "A difficult documentation parser fix maps to a verified model, but the tool schema cannot accept effort; report advice without claiming it was applied.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "medium",
+        "reasoning": 0.78,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "claude"
+      },
+      "outcome_verification": {
+        "notes": "Decision labels effort advisory-only and contains no unsupported rewrite field.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-059",
+      "title": "Long easy inventory request",
+      "description": "For every module in the supplied tree, list public function names alphabetically; do not infer behavior or edit files.",
+      "expectation": {
+        "tier": "T0",
+        "risk": "low",
+        "reasoning": 0.3,
+        "effort": "low",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Compare complete symbol inventory and ordering; long context alone is not high complexity.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-060",
+      "title": "Short hard lock-order question",
+      "description": "Why can this lock ordering deadlock when callbacks re-enter the queue, and what invariant prevents it?",
+      "expectation": {
+        "tier": "T2",
+        "risk": "high",
+        "reasoning": 0.86,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Review thread interleaving argument against a minimal synthetic reproducer.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-061",
+      "title": "Explicit frontier opt-out",
+      "description": "A broad architecture review is marked frontier-tier by requirements, but frontier routing is disabled; abstain or use only a justified safe policy outcome.",
+      "expectation": {
+        "tier": "T3",
+        "risk": "high",
+        "reasoning": 0.96,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Assert no frontier auto-route without explicit opt-in; do not substitute a weaker route below floor.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    },
+    {
+      "id": "TASK-062",
+      "title": "Runtime-specific exact version",
+      "description": "A worker can use only the explicitly configured exact model version; a nearby newer catalog generation is not an acceptable substitution.",
+      "expectation": {
+        "tier": "T2",
+        "risk": "medium",
+        "reasoning": 0.76,
+        "effort": "high",
+        "rationale": "Human-authored requirements label; policy expectation, not reverse-engineered from router output.",
+        "pins": {},
+        "runtime_applicability": "both"
+      },
+      "outcome_verification": {
+        "notes": "Fixture catalog contains mismatched generation and must produce no substitution.",
+        "provenance": "Synthetic verification proposal; no task was executed and no success is claimed."
+      },
+      "provenance": "Manually authored synthetic coding-task scenario for RTE035; not copied from a real project."
+    }
+  ],
+  "boundary_sequences": [
+    {
+      "id": "BOUNDARY-01",
+      "title": "English new task marker",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-01-RECORD-01",
+          "event_id": "SEQ-01-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Add a bounded parser for the fictional meter format and test malformed rows.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-01-01"
+        },
+        {
+          "record_id": "SEQ-01-RECORD-02",
+          "event_id": "SEQ-01-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "Please add a regression for an empty meter payload too.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-01-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-02",
+      "title": "Portuguese explicit task",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-02-RECORD-01",
+          "event_id": "SEQ-02-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Implemente uma validação de datas para o calendário fictício e cubra fevereiro bissexto.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-02-01"
+        },
+        {
+          "record_id": "SEQ-02-RECORD-02",
+          "event_id": "SEQ-02-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "Isso inclui manter os formatos antigos aceitos.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-02-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-03",
+      "title": "English acknowledgment",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-03-RECORD-01",
+          "event_id": "SEQ-03-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Refactor the local slug helper to reject whitespace and add table-driven tests.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-03-01"
+        },
+        {
+          "record_id": "SEQ-03-RECORD-02",
+          "event_id": "SEQ-03-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "Yes, go ahead.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-03-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-04",
+      "title": "Portuguese acknowledgment",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-04-RECORD-01",
+          "event_id": "SEQ-04-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Corrija o parser de códigos de estado e preserve compatibilidade com entradas antigas.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-04-01"
+        },
+        {
+          "record_id": "SEQ-04-RECORD-02",
+          "event_id": "SEQ-04-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "Sim, pode seguir.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-04-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-05",
+      "title": "Quoted marker is not prefix",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-05-RECORD-01",
+          "event_id": "SEQ-05-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "Please inspect this documentation example: the string /new-task appears in a code sample, but I only need a summary of its meaning.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-05-01",
+          "label_review": "Primary adjudication: explicit initial request for a summary is a task; the quoted /new-task text is not a structural marker. Read-only does not imply UNKNOWN."
+        },
+        {
+          "record_id": "BOUNDARY-05-followup-2",
+          "event_id": "BOUNDARY-05-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 18.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-06",
+      "title": "Log excerpt is not a task",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-06-RECORD-01",
+          "event_id": "SEQ-06-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "UNKNOWN",
+          "prompt": "Here is a long diagnostic log: ERROR retry failed; worker says deploy test update route function. Please explain what the log contains, do not change code.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-06-01"
+        },
+        {
+          "record_id": "BOUNDARY-06-followup-2",
+          "event_id": "BOUNDARY-06-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 18.0,
+          "prompt": "OK, continue.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-07",
+      "title": "Code quote contains imperative",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-07-RECORD-01",
+          "event_id": "SEQ-07-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "Review this snippet only: `# implement auth; delete cache; deploy now` and tell me whether the comment is clear.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-07-01",
+          "label_review": "Primary requirements adjudication: explicit initial review/explanation/log-analysis request is a logical task even without edits. Quoted command words alone are not the reason for NEW_TASK."
+        },
+        {
+          "record_id": "BOUNDARY-07-followup-2",
+          "event_id": "BOUNDARY-07-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 18.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-08",
+      "title": "One more thing without a new objective",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-08-RECORD-01",
+          "event_id": "SEQ-08-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Add a display label to the fictional queue status and test it.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-08-01"
+        },
+        {
+          "record_id": "SEQ-08-RECORD-02",
+          "event_id": "SEQ-08-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "One more thing: keep the current keyboard shortcut working.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-08-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-09",
+      "title": "Explicit topic shift same vocabulary",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-09-RECORD-01",
+          "event_id": "SEQ-09-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Review the queue scheduler retry behavior and its bounded delay tests.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-09-01"
+        },
+        {
+          "record_id": "SEQ-09-RECORD-02",
+          "event_id": "SEQ-09-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "New task: separately design queue scheduling fairness under concurrent tenants.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-09-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-10",
+      "title": "Different vocabulary without topic cue",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-10-RECORD-01",
+          "event_id": "SEQ-10-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Add validation to the fictional parser and test empty records.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-10-01"
+        },
+        {
+          "record_id": "SEQ-10-RECORD-02",
+          "event_id": "SEQ-10-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "UNKNOWN",
+          "prompt": "The calendar archive needs a migration with reversible date partitions.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-10-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-11",
+      "title": "Native root task created",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-11-RECORD-01",
+          "event_id": "SEQ-11-EV-01",
+          "kind": "TASK_CREATED",
+          "expected_class": "NEW_TASK",
+          "prompt": "",
+          "timestamp_seconds": 17.0,
+          "task_id": "native-11-01",
+          "trusted_native": true,
+          "turn_id": "turn-11"
+        },
+        {
+          "record_id": "BOUNDARY-11-followup-2",
+          "event_id": "BOUNDARY-11-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 18.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        },
+        {
+          "record_id": "BOUNDARY-11-followup-3",
+          "event_id": "BOUNDARY-11-followup-3",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 19.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-12",
+      "title": "Two native children share one root turn",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-12-RECORD-01",
+          "event_id": "SEQ-12-EV-01",
+          "kind": "TASK_CREATED",
+          "expected_class": "NEW_TASK",
+          "prompt": "",
+          "timestamp_seconds": 17.0,
+          "task_id": "native-12-01",
+          "trusted_native": true,
+          "turn_id": "turn-12"
+        },
+        {
+          "record_id": "SEQ-12-RECORD-02",
+          "event_id": "SEQ-12-EV-02",
+          "kind": "TASK_CREATED",
+          "expected_class": "NEW_TASK",
+          "prompt": "",
+          "timestamp_seconds": 34.0,
+          "task_id": "native-12-02",
+          "trusted_native": true,
+          "turn_id": "turn-12"
+        },
+        {
+          "record_id": "BOUNDARY-12-followup-3",
+          "event_id": "BOUNDARY-12-followup-3",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 35.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        },
+        {
+          "record_id": "BOUNDARY-12-followup-4",
+          "event_id": "BOUNDARY-12-followup-4",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 36.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-13",
+      "title": "Duplicate native task event ID",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-13-RECORD-01",
+          "event_id": "SEQ-13-EV-01",
+          "kind": "TASK_CREATED",
+          "expected_class": "NEW_TASK",
+          "prompt": "",
+          "timestamp_seconds": 17.0,
+          "task_id": "native-13-01",
+          "trusted_native": true,
+          "turn_id": "turn-13"
+        },
+        {
+          "record_id": "SEQ-13-RECORD-02",
+          "event_id": "SEQ-13-EV-01",
+          "kind": "TASK_CREATED",
+          "expected_class": "CONTINUATION",
+          "prompt": "",
+          "timestamp_seconds": 34.0,
+          "task_id": "native-13-01",
+          "trusted_native": true,
+          "turn_id": "turn-13"
+        },
+        {
+          "record_id": "BOUNDARY-13-followup-3",
+          "event_id": "BOUNDARY-13-followup-3",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 35.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        },
+        {
+          "record_id": "BOUNDARY-13-followup-4",
+          "event_id": "BOUNDARY-13-followup-4",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 36.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-14",
+      "title": "Duplicate root event ID",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-14-RECORD-01",
+          "event_id": "SEQ-14-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Build a small synthetic token parser and test invalid separators.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-14-01"
+        },
+        {
+          "record_id": "SEQ-14-RECORD-02",
+          "event_id": "SEQ-14-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "/new-task Build a small synthetic token parser and test invalid separators.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-14-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-15",
+      "title": "Event identity missing",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-15-RECORD-01",
+          "event_id": null,
+          "kind": "USER_PROMPT",
+          "expected_class": "UNKNOWN",
+          "prompt": "/new-task Add a focused test for the fictional serializer error handling.",
+          "timestamp_seconds": 17.0
+        },
+        {
+          "record_id": "BOUNDARY-15-followup-2",
+          "event_id": "BOUNDARY-15-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 18.0,
+          "prompt": "OK, continue.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-16",
+      "title": "Internal child activity",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-16-RECORD-01",
+          "event_id": "SEQ-16-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Add a parser option for strict mode with tests for both modes.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-16-01"
+        },
+        {
+          "record_id": "SEQ-16-RECORD-02",
+          "event_id": "SEQ-16-EV-02",
+          "kind": "SUBAGENT_SPAWN",
+          "expected_class": "UNKNOWN",
+          "prompt": "",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-16-02"
+        },
+        {
+          "record_id": "SEQ-16-RECORD-03",
+          "event_id": "SEQ-16-EV-03",
+          "kind": "TOOL_ACTIVITY",
+          "expected_class": "UNKNOWN",
+          "prompt": "",
+          "timestamp_seconds": 51.0,
+          "turn_id": "turn-16-03"
+        },
+        {
+          "record_id": "BOUNDARY-16-followup-4",
+          "event_id": "BOUNDARY-16-followup-4",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 52.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-17",
+      "title": "Resume preserves active work",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-17-RECORD-01",
+          "event_id": "SEQ-17-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Diagnose why the synthetic queue can lose an item after a retry.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-17-01"
+        },
+        {
+          "record_id": "SEQ-17-RECORD-02",
+          "event_id": "SEQ-17-EV-02",
+          "kind": "RESUME",
+          "expected_class": "UNKNOWN",
+          "prompt": "",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-17-02"
+        },
+        {
+          "record_id": "SEQ-17-RECORD-03",
+          "event_id": "SEQ-17-EV-03",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "Continue the same queue diagnosis and add a deterministic regression test.",
+          "timestamp_seconds": 51.0,
+          "turn_id": "turn-17-03"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-18",
+      "title": "Compaction keeps current objective",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-18-RECORD-01",
+          "event_id": "SEQ-18-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Design a bounded event receipt cache and test expiry behavior.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-18-01"
+        },
+        {
+          "record_id": "SEQ-18-RECORD-02",
+          "event_id": "SEQ-18-EV-02",
+          "kind": "COMPACTION",
+          "expected_class": "UNKNOWN",
+          "prompt": "",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-18-02"
+        },
+        {
+          "record_id": "SEQ-18-RECORD-03",
+          "event_id": "SEQ-18-EV-03",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "Continue with the receipt eviction edge case we were discussing.",
+          "timestamp_seconds": 51.0,
+          "turn_id": "turn-18-03"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-19",
+      "title": "Stop is not completion",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-19-RECORD-01",
+          "event_id": "SEQ-19-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Fix the fictional worker shutdown ordering and test pending callbacks.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-19-01"
+        },
+        {
+          "record_id": "SEQ-19-RECORD-02",
+          "event_id": "SEQ-19-EV-02",
+          "kind": "STOP",
+          "expected_class": "UNKNOWN",
+          "prompt": "",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-19-02"
+        },
+        {
+          "record_id": "SEQ-19-RECORD-03",
+          "event_id": "SEQ-19-EV-03",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "Continue diagnosing the shutdown case.",
+          "timestamp_seconds": 51.0,
+          "turn_id": "turn-19-03"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-20",
+      "title": "Trusted completion then next task",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-20-RECORD-01",
+          "event_id": "SEQ-20-EV-01",
+          "kind": "TASK_CREATED",
+          "expected_class": "NEW_TASK",
+          "prompt": "",
+          "timestamp_seconds": 17.0,
+          "task_id": "native-20-01",
+          "trusted_native": true,
+          "turn_id": "turn-20"
+        },
+        {
+          "record_id": "SEQ-20-RECORD-02",
+          "event_id": "SEQ-20-EV-02",
+          "kind": "TASK_COMPLETED",
+          "expected_class": "UNKNOWN",
+          "prompt": "",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-20-02"
+        },
+        {
+          "record_id": "SEQ-20-RECORD-03",
+          "event_id": "SEQ-20-EV-03",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Add an independent status endpoint with input validation.",
+          "timestamp_seconds": 51.0,
+          "turn_id": "turn-20-03"
+        },
+        {
+          "record_id": "BOUNDARY-20-followup-4",
+          "event_id": "BOUNDARY-20-followup-4",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 52.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-21",
+      "title": "TTL expires evidence, not novelty",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-21-RECORD-01",
+          "event_id": "SEQ-21-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Add a local parser for bounded fixture lines and test blank input.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-21-01"
+        },
+        {
+          "record_id": "SEQ-21-RECORD-02",
+          "event_id": "SEQ-21-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "UNKNOWN",
+          "prompt": "After a long pause, continue the same parser task with its UTF-8 edge case.",
+          "timestamp_seconds": 3602.0,
+          "turn_id": "turn-21-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-22",
+      "title": "Preflight is explicit",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-22-RECORD-01",
+          "event_id": "SEQ-22-EV-01",
+          "kind": "PREFLIGHT",
+          "expected_class": "NEW_TASK",
+          "prompt": "Assess this planned task: implement a fictional binary header parser with strict bounds and malformed-input tests.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-22-01"
+        },
+        {
+          "record_id": "BOUNDARY-22-followup-2",
+          "event_id": "BOUNDARY-22-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 18.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        },
+        {
+          "record_id": "BOUNDARY-22-followup-3",
+          "event_id": "BOUNDARY-22-followup-3",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 19.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-23",
+      "title": "Question about pasted stack trace",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-23-RECORD-01",
+          "event_id": "SEQ-23-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "What does this pasted stack trace mean? It contains a call to update_record and a test failure, but I do not request code changes.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-23-01",
+          "label_review": "Primary requirements adjudication: explicit initial review/explanation/log-analysis request is a logical task even without edits. Quoted command words alone are not the reason for NEW_TASK."
+        },
+        {
+          "record_id": "BOUNDARY-23-followup-2",
+          "event_id": "BOUNDARY-23-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 18.0,
+          "prompt": "OK, continue.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-24",
+      "title": "Code quote with new task phrase",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-24-RECORD-01",
+          "event_id": "SEQ-24-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "UNKNOWN",
+          "prompt": "The source comment says `new task: clear the cache`; explain whether this code comment describes a side effect.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-24-01"
+        },
+        {
+          "record_id": "BOUNDARY-24-followup-2",
+          "event_id": "BOUNDARY-24-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 18.0,
+          "prompt": "Sim, pode seguir.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-25",
+      "title": "Portuguese continuation question",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-25-RECORD-01",
+          "event_id": "SEQ-25-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Adicione um limite de tentativas ao leitor fictício e teste a falha final.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-25-01"
+        },
+        {
+          "record_id": "SEQ-25-RECORD-02",
+          "event_id": "SEQ-25-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "E se o arquivo vier vazio?",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-25-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-26",
+      "title": "Portuguese unrelated ambiguous request",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-26-RECORD-01",
+          "event_id": "SEQ-26-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Corrija a normalização de nomes no catálogo de teste.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-26-01"
+        },
+        {
+          "record_id": "SEQ-26-RECORD-02",
+          "event_id": "SEQ-26-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "UNKNOWN",
+          "prompt": "Agora preciso revisar o cálculo de juros do relatório financeiro.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-26-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-27",
+      "title": "Explicit Portuguese topic shift",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-27-RECORD-01",
+          "event_id": "SEQ-27-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Corrija a normalização de nomes no catálogo de teste e inclua casos com acentos.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-27-01"
+        },
+        {
+          "record_id": "SEQ-27-RECORD-02",
+          "event_id": "SEQ-27-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "Novo assunto: desenhe uma política de retenção de eventos com privacidade e auditoria.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-27-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-28",
+      "title": "Acknowledgment followed by detail",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-28-RECORD-01",
+          "event_id": "SEQ-28-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Add a bounded cache for synthetic lookup results and test eviction.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-28-01"
+        },
+        {
+          "record_id": "SEQ-28-RECORD-02",
+          "event_id": "SEQ-28-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "Okay.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-28-02"
+        },
+        {
+          "record_id": "SEQ-28-RECORD-03",
+          "event_id": "SEQ-28-EV-03",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "Also keep lookup ordering stable.",
+          "timestamp_seconds": 51.0,
+          "turn_id": "turn-28-03"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-29",
+      "title": "Quoted operational log asks analysis",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-29-RECORD-01",
+          "event_id": "SEQ-29-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "Analyze this log excerpt only: `deploy failed; update route; test parser`. Do not execute or edit anything.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-29-01",
+          "label_review": "Primary requirements adjudication: explicit initial review/explanation/log-analysis request is a logical task even without edits. Quoted command words alone are not the reason for NEW_TASK."
+        },
+        {
+          "record_id": "BOUNDARY-29-followup-2",
+          "event_id": "BOUNDARY-29-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 18.0,
+          "prompt": "OK, continue.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-30",
+      "title": "Event ID and turn ID distinct",
+      "runtime": "claude",
+      "events": [
+        {
+          "record_id": "SEQ-30-RECORD-01",
+          "event_id": "SEQ-30-EV-01",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Add a safe decoder for a fictional compact header and validate offsets.",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-30-01"
+        },
+        {
+          "record_id": "SEQ-30-RECORD-02",
+          "event_id": "SEQ-30-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "CONTINUATION",
+          "prompt": "A separate user turn asks to continue that decoder's offset tests.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-30-02"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-31",
+      "title": "Session start before first request",
+      "runtime": "codex",
+      "events": [
+        {
+          "record_id": "SEQ-31-RECORD-01",
+          "event_id": "SEQ-31-EV-01",
+          "kind": "SESSION_START",
+          "expected_class": "UNKNOWN",
+          "prompt": "",
+          "timestamp_seconds": 17.0,
+          "turn_id": "turn-31-01"
+        },
+        {
+          "record_id": "SEQ-31-RECORD-02",
+          "event_id": "SEQ-31-EV-02",
+          "kind": "USER_PROMPT",
+          "expected_class": "NEW_TASK",
+          "prompt": "/new-task Add a clear error for malformed synthetic request metadata.",
+          "timestamp_seconds": 34.0,
+          "turn_id": "turn-31-02"
+        },
+        {
+          "record_id": "BOUNDARY-31-followup-3",
+          "event_id": "BOUNDARY-31-followup-3",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 35.0,
+          "prompt": "OK, continue.",
+          "expected_class": "CONTINUATION"
+        }
+      ],
+      "provenance": "Manually authored synthetic multi-turn/event sequence; expected label comes from task-boundary requirements, not current-code behavior."
+    },
+    {
+      "id": "BOUNDARY-32",
+      "title": "Raw quoted material without a user request 1",
+      "runtime": "codex",
+      "provenance": "Manually authored synthetic primary-review negative, not current-code behavior.",
+      "events": [
+        {
+          "record_id": "raw-32-1",
+          "event_id": "raw-32-1",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 1,
+          "prompt": "`# implement auth; delete cache; deploy now`",
+          "expected_class": "UNKNOWN"
+        },
+        {
+          "record_id": "BOUNDARY-32-followup-2",
+          "event_id": "BOUNDARY-32-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 2,
+          "prompt": "OK, continue.",
+          "expected_class": "CONTINUATION"
+        }
+      ]
+    },
+    {
+      "id": "BOUNDARY-33",
+      "title": "Raw quoted material without a user request 2",
+      "runtime": "codex",
+      "provenance": "Manually authored synthetic primary-review negative, not current-code behavior.",
+      "events": [
+        {
+          "record_id": "raw-33-1",
+          "event_id": "raw-33-1",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 1,
+          "prompt": "Traceback: update_record failed at line 7\nValueError: sample failure",
+          "expected_class": "UNKNOWN"
+        },
+        {
+          "record_id": "BOUNDARY-33-followup-2",
+          "event_id": "BOUNDARY-33-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 2,
+          "prompt": "OK, continue.",
+          "expected_class": "CONTINUATION"
+        }
+      ]
+    },
+    {
+      "id": "BOUNDARY-34",
+      "title": "Raw quoted material without a user request 3",
+      "runtime": "codex",
+      "provenance": "Manually authored synthetic primary-review negative, not current-code behavior.",
+      "events": [
+        {
+          "record_id": "raw-34-1",
+          "event_id": "raw-34-1",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 1,
+          "prompt": "```text\ndeploy failed; update route; test parser\n```",
+          "expected_class": "UNKNOWN"
+        },
+        {
+          "record_id": "BOUNDARY-34-followup-2",
+          "event_id": "BOUNDARY-34-followup-2",
+          "kind": "USER_PROMPT",
+          "timestamp_seconds": 2,
+          "prompt": "OK, continue.",
+          "expected_class": "CONTINUATION"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "prepared_not_installed",
+  "handoff_root": "/var/folders/gy/4fqff5xd3k51nnccz76xsqcm0000gn/T/router-codex-native-handoff-j0qpwien",
+  "version": "0.1.0+fd1f2b146ad3",
+  "selector": "intelligent-agent-router@intelligent-router-local-3c81fd10c4ef",
+  "artifact_hashes_verified": true,
+  "mode": "disabled",
+  "profile_exists": false,
+  "state_exists": false,
+  "provider_calls": 0,
+  "trust_granted": false,
+  "credential_bytes_read": false,
+  "native_install_review_execution": "pending_user_action_or_approval"
+}

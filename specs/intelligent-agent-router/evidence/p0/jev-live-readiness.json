@@ -1,0 +1,8 @@
+{
+  "sdk": "typesafe-sdk",
+  "expected_version": "0.7.5",
+  "mode": "live_synthetic",
+  "network_request": false,
+  "status": "blocked_missing_key",
+  "credential_env": "TYPESAFE_API_KEY"
+}

@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "runtime": "claude",
+  "host_version": "2.1.303",
+  "scope": "global_user",
+  "plugin_version": "0.1.0+34ea84ea5c74",
+  "mode": "auto_workers",
+  "native_session_id": "2df1d643-700d-4f7e-9382-936254f10d3a",
+  "root_actual_models": [
+    "claude-opus-5-5"
+  ],
+  "root_effort": "high",
+  "permission_mode": "auto",
+  "workers": [
+    {
+      "case": "router-auto",
+      "original_pinned": false,
+      "argument_model": "sonnet",
+      "actual_model": "claude-sonnet-5-5",
+      "actual_effort": "medium",
+      "nonrouting_args_preserved": true,
+      "permission_mode_preserved": true,
+      "agent_id": "aba3f79c9ecbbbccd"
+    },
+    {
+      "case": "router-pin",
+      "original_pinned": true,
+      "argument_model": "sonnet",
+      "actual_model": "claude-sonnet-5-5",
+      "actual_effort": "high",
+      "nonrouting_args_preserved": true,
+      "permission_mode_preserved": true,
+      "agent_id": "a454aabfad4e83171"
+    },
+    {
+      "case": "router-conflict",
+      "original_pinned": false,
+      "argument_model": "haiku",
+      "actual_model": "claude-haiku-5-5",
+      "actual_effort": "high",
+      "nonrouting_args_preserved": true,
+      "permission_mode_preserved": true,
+      "agent_id": "a5aa9536c9dee3cbe"
+    }
+  ],
+  "worker_provider_calls": 1,
+  "worker_assessment_confidence": 0.82,
+  "pins_and_classic_conflict_provider_calls": 0,
+  "installed_payload_files_verified": 38,
+  "settings_values_unchanged": true,
+  "settings_order": "router first to observe companion admission",
+  "desktop_verified": false,
+  "catalog_scope": "verified Haiku5.5/Sonnet5.5 medium; unsupported mappings abstain",
+  "raw_evidence": "global/claude/private/production-verify{.jsonl,-events.jsonl,-debug.txt}",
+  "no_commits_or_push": true
+}

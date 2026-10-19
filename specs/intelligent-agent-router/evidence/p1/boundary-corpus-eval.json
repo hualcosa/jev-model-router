@@ -1,0 +1,19 @@
+{
+  "event_count": 83,
+  "mismatch_count": 1,
+  "mismatches": [
+    {
+      "sequence_id": "BOUNDARY-30",
+      "sequence_title": "Event ID and turn ID distinct",
+      "record_id": "SEQ-30-RECORD-02",
+      "event_id": "SEQ-30-EV-02",
+      "turn_id": "turn-30-02",
+      "kind": "USER_PROMPT",
+      "prompt": "A separate user turn asks to continue that decoder's offset tests.",
+      "expected": "CONTINUATION",
+      "actual": "UNKNOWN",
+      "reason": "ambiguous_prompt"
+    }
+  ],
+  "limits": "Synthetic deterministic corpus only, reviewed/tuned with disclosed adjudications; NOT held-out or real task/provider outcome quality."
+}
