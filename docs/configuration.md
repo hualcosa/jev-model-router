@@ -207,6 +207,10 @@ other fields; an `ask` or `deny` batch is not routed. Explicit pins in either
 original input or final batch are preserved. Exact host/companion/module
 coverage is required as described in installation. The router never treats an
 ordinary command hook's guessed merge order as safe rewrite authority.
+Start a fresh Claude session after enabling routing or changing the plugin stack:
+native coverage is established once at session start, and a session started
+disabled cannot acquire that authority just by editing the config. Revoking
+consent or setting `disabled` is read again by the bridge on later calls.
 
 ## Explain retained decisions offline
 
