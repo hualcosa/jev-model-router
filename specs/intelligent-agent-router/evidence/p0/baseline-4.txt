@@ -1,3 +1,0 @@
-OK: README.md
-OK: prompt.md
-OK: plugins/claude-model-router-hook/prompt.md

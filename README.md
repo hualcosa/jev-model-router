@@ -1,122 +1,150 @@
-<div align="center">
+# Jev Model Router
 
-# Claude Model Router Hook
+### Keep the orchestrator. Route the work.
 
-**Effort-first model routing for Claude Code. Heuristics-first, opt-in autoswitch.**
+Choose a model **and** reasoning effort for delegated coding work in **Claude Code
+and Codex**, without changing the main session’s choices.
+[Jev by TypeSafe](https://github.com/typesafe-ai/typesafe-sdk-python) classifies the assignment; a local, inspectable policy decides
+whether a supported worker route is appropriate. Explicit pins stay yours.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux-lightgrey)
-![Shell](https://img.shields.io/badge/shell-bash-blue)
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/public/routing-overview-mobile.svg">
+  <img src="assets/public/routing-overview.svg" alt="A delegated assignment passes eligibility checks, Jev classification and local policy before native worker routing; the orchestrator remains unchanged.">
+</picture>
 
-</div>
+[Open full-size overview](assets/public/routing-overview.svg)
 
-## Install
+[Get started](docs/installation.md) · [Configuration](docs/configuration.md) ·
+[Routing rationale](docs/routing-rationale.md) · [Demonstration](docs/demo.md)
 
-```bash
-installer="$(curl -fsSL https://raw.githubusercontent.com/tzachbon/claude-model-router-hook/361031c9381fd6d2b5c47b311b7037015b3c2f6d/install.sh)" && bash -c "$installer"
-```
+## Why route delegated work?
 
-The wizard asks whether to install globally and star the GitHub repository. Both prompts default to yes. Installation requires Claude Code and Python 3; starring requires an authenticated `gh` command. Restart Claude Code after installation.
+A repository search, a focused implementation and a security-sensitive review do
+not need the same treatment. A fixed worker model ignores that difference;
+hand-written routing instructions leave the choice to the orchestrator.
 
-<video src="docs/slides/public/model-router.mov" width="887" controls></video>
-
-Claude Model Router classifies each prompt by task and effort, then recommends the matching Claude model. It warns by default. Autoswitch is opt-in and only affects new sessions.
+Jev Model Router separates **task assessment** from **execution policy**. It aims
+to make worker selection explicit and repeatable—not to promise that a smaller
+model is always sufficient or that routing improves quality, latency or cost.
 
 ## What it does
 
-- Routes prompts with local heuristics and an optional Claude Code fallback.
-- Uses Haiku only for clearly mechanical work; defaults agentic coding to Opus with graduated effort.
-- Routes `Agent` and `Task` sub-agents when they spawn. Nested delegation is floored at the implementation target, and an explicit model always wins.
-- Records the requested and resolved model for completed sub-agents, so host-side fallback or allowlist substitutions are visible.
-- Dampens borderline classifications instead of switching tiers on weak evidence.
+- **Classifies generic assignments** into task requirements, using Jev’s external
+  classifier rather than asking it to choose your runtime model directly.
+- **Selects model and effort separately**, with task tiers, risk floors, confidence
+  checks and a runtime-specific supported catalog.
+- **Preserves the main session**, explicit worker model/effort pins, custom profiles,
+  nonrouting arguments and native permission decisions.
+- **Abstains safely** on unsupported mappings, missing consent, stale capabilities,
+  conflicting integrations or provider failures. Native behavior continues.
+- **Makes decisions inspectable** with offline explanation, privacy preview,
+  diagnostics and bounded local telemetry.
+
+## Benchmark-informed, not benchmark-validated
+
+The policy’s model/effort priors were informed by
+[Artificial Analysis](https://artificialanalysis.ai/) benchmark comparisons.
+Benchmarks are a starting point for a policy—not proof of the right route for
+every task, a live leaderboard integration, or measured savings for this router.
+
+Read the [routing rationale](docs/routing-rationale.md) for the task classes,
+independent effort choices, source provenance and limits. API price comparisons
+are not measurements of subscription quota consumption. No affiliation or
+endorsement by Artificial Analysis is implied.
+
+## Start safely: inspect before enabling
+
+Python 3.11+ is the tested CI baseline. Clone this repository and try an offline
+explanation first; these commands do not install a plugin or call Jev:
+
+```sh
+git clone https://github.com/hualcosa/jev-model-router.git
+cd jev-model-router
+python3 scripts/router_cli.py --help
+python3 scripts/router_cli.py explain --help
+```
+
+Follow the [installation guide](docs/installation.md) for an isolated smoke test,
+pinned SDK dependency, private key/config paths, package generation and explicit
+native installation. **Do not use the root `install.sh` for the Jev router**: it
+belongs to the retained legacy heuristic plugin.
+
+Automatic routing is opt-in. Building an artifact does not enable it, grant
+trust or authorize sending real assignments to an external classifier.
+
+## See the routing boundary
+
+![Annotated reconstruction of a historical native Claude CLI check: the root remains Opus/high; the unpinned worker executes Sonnet/medium and the explicit Sonnet/high pin stays unchanged.](assets/public/demo.png)
+
+This is an **annotated reconstruction of retained historical evidence**, not a
+fresh terminal recording or a quality/cost comparison. The
+[demonstration and text equivalent](docs/demo.md) distinguish requested arguments
+from observed native execution, and describe its version and evidence limits.
 
 ## How it works
 
-| Hook | Job |
-|---|---|
-| `UserPromptSubmit` | Classifies the prompt and warns or writes the next-session model. |
-| `PreToolUse` | Routes `Agent` and `Task` spawns. |
-| `PostToolUse` | Logs the model actually used by completed `Agent` and `Task` work. |
-| `SessionStart` | Adds the shared task-class rules to each session. |
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/public/routing-flow-mobile.svg">
+  <img src="assets/public/routing-flow.svg" alt="Routing decision flow: preserve ineligible or pinned work, classify eligible assignments, apply confidence/risk/catalog checks, then propose a model and effort or inherit native behavior.">
+</picture>
 
-Errors fail open and leave the prompt unchanged. Prefix a prompt with `~` or `<` to skip routing.
+[Open full-size decision flow](assets/public/routing-flow.svg)
 
-![Sub-agent spawned with the routed model](assets/sub-agent-routing.png)
+1. Recognize an eligible generic delegated assignment and check consent.
+2. Minimize the task description before the external Jev request.
+3. Apply local policy to the returned task requirements.
+4. Resolve an explicitly supported model/effort mapping.
+5. Pass the proposal through the native integration—or abstain.
 
-<!-- advisory:start -->
-## Model Tier Rules
+**Claude Code:** a native final-classic middleware inspects the actual classic
+hook outcome before proposing worker routing. Exact-build/module attestation is
+required; unknown integrations disable rewriting.
 
-These rules apply to YOU and to every sub-agent you spawn.
+**Codex:** a preparation bridge binds the original assignment to a single-use
+reference, consumed at native spawn. It does not execute a replacement worker.
+Preparation is not itself evidence that a child ran with the selected settings.
 
-### Task classes and default targets
+## Safeguards and privacy
 
-| Class | Target model | Effort | When to use |
-|---|---|---|---|
-| mechanical | haiku | none | Git ops, renames, formatting, lint, file moves, version bumps, quick lookups, short imperative tasks. |
-| implementation | opus | medium | Writing or editing code, building features, creating components or APIs, writing tests, standard feature work. |
-| debugging | opus | high | Diagnosing failures, flaky tests, races, regressions, stack traces, bisecting, reproducing bugs. |
-| architecture | opus | xhigh | Architecture decisions, tradeoff analysis, redesigns, deep multi-file analysis, sustained reasoning over large context. |
-| extreme | opus | max | Multi-system migrations, codebase-wide rewrites, long-horizon plans, RFCs and design docs, platform-scale work. |
-| abstain | (no routing) | - | Prompt does not clearly match any class; current model and effort pass through unmodified. |
+- No main-session model/effort switching and no permission elevation.
+- Missing consent or authority means no automatic rewrite.
+- Keys and runtime state belong in private external locations, not Git.
+- Task descriptions sent to Jev are minimized/redacted, **not guaranteed anonymous**.
+  They can still contain sensitive business context: preview them and grant only
+  the consent appropriate to your work. Do not send secrets.
+- Local telemetry avoids raw task/transcript content; inspect the
+  [configuration guide](docs/configuration.md) for retention and control details.
 
-### Sub-agent model selection (MANDATORY)
+## Compatibility is deliberately scoped
 
-When calling the Agent tool, set the model parameter to match the task class
-above. Do not default every sub-agent to the highest effort. Match the model
-and effort to the work: mechanical work goes to haiku, implementation to opus,
-debugging to opus, deep analysis to opus, and platform-scale work to opus.
-<!-- advisory:end -->
+Historical native checks covered **Claude Code CLI 2.1.303** and **Codex CLI
+0.163.0**. These are evidence baselines, not promises that an arbitrary newer
+binary is supported. Claude’s exact binary and companion-module bindings are
+stricter than a version string. Updates can intentionally cause abstention.
 
-## Configure
+Desktop, managed-host policies, every model/effort pair and every permission mode
+are **not** established by those checks. See the
+[compatibility and troubleshooting guide](docs/configuration.md).
 
-Use `~/.claude/model-router.json` globally or `.claude/model-router.json` in one project. Project settings win.
+## Documentation and contributing
 
-```json
-{
-  "version": 2,
-  "apply_mode": "warn",
-  "allow_fable_autoswitch": false,
-  "subagent_enforcement": "on",
-  "classifier": { "cli_fallback": true },
-  "thresholds": { "effort_warn_distance": 2 }
-}
-```
+- [Installation and isolated checks](docs/installation.md)
+- [Configuration, consent, diagnostics and rollback](docs/configuration.md)
+- [Artificial Analysis-informed routing rationale](docs/routing-rationale.md)
+- [Annotated functional demonstration](docs/demo.md)
+- [Contributing and offline verification](CONTRIBUTING.md)
+- [Security reporting](SECURITY.md)
 
-| Key | Default | Effect |
-|---|---|---|
-| `apply_mode` | `warn` | Warn or write the model for the next session. |
-| `allow_fable_autoswitch` | `false` | Allow autoswitching to an explicitly configured `fable` target. |
-| `subagent_enforcement` | `on` | Route, advise, or ignore sub-agent spawns. |
-| `classifier.cli_fallback` | `true` | Use `claude -p --model haiku` for ambiguous prompts. |
-| `thresholds.effort_warn_distance` | `2` | Warn near a class boundary. |
+The shared implementation lives in `router_core/`; native entrypoints and package
+builders live in `scripts/`. Reusable tests and synthetic fixtures stay in `tests/`.
+Internal development records are not product documentation or plugin payload.
 
-<details>
-<summary>Alternative installs</summary>
+## License and provenance
 
-### Claude plugin manager
+[MIT](LICENSE). This project builds on
+[tzachbon/claude-model-router-hook](https://github.com/tzachbon/claude-model-router-hook).
+The original heuristic plugin remains under `plugins/claude-model-router-hook/`
+with its own prompts and metadata; it is distinct from the Jev-backed core and its
+generated `intelligent-agent-router` package. Upstream attribution is retained.
 
-```bash
-claude plugin marketplace add tzachbon/claude-model-router-hook
-claude plugin install claude-model-router-hook@claude-model-router-hook
-```
-
-### Manual
-
-```bash
-git clone https://github.com/tzachbon/claude-model-router-hook.git
-cd claude-model-router-hook
-./plugins/claude-model-router-hook/install.sh
-```
-
-The manual installer prints the `settings.json` entries that you need to add.
-
-</details>
-
-## Notes
-
-- Activity is logged at `~/.claude/hooks/model-router-hook.log`, including requested versus resolved sub-agent models.
-- If another `PreToolUse` hook rewrites the same spawn, Claude Code's undocumented merge order decides which rewrite wins.
-
-## Project
-
-[Contributing](CONTRIBUTING.md) | [MIT license](LICENSE) | Based on [model-matchmaker](https://github.com/coyvalyss1/model-matchmaker) by [@coyvalyss1](https://github.com/coyvalyss1)
+If inspectable worker routing is useful to you, consider starring the repository.

@@ -247,6 +247,10 @@ assert_contains "$CASE_OUTPUT" "Claude global install failed."
 assert_contains "$GH_LOG" "api --hostname github.com --method PUT /user/starred/tzachbon/claude-model-router-hook"
 echo "PASS: GitHub star still runs after install failure"
 
-README_COMMAND="installer=\"\$(curl -fsSL https://raw.githubusercontent.com/tzachbon/claude-model-router-hook/361031c9381fd6d2b5c47b311b7037015b3c2f6d/install.sh)\" && bash -c \"\$installer\""
-assert_contains "$REPO_ROOT/README.md" "$README_COMMAND"
-echo "PASS: README command preserves wizard input"
+# This installer is retained for the legacy plugin, not promoted as the Jev
+# quickstart. Keep its wizard behavior tested above; enforce the public boundary
+# here instead of requiring a curl-to-shell command for the upstream project.
+assert_contains "$REPO_ROOT/README.md" 'git clone https://github.com/hualcosa/jev-model-router.git'
+assert_contains "$REPO_ROOT/README.md" '**Do not use the root `install.sh` for the Jev router**'
+assert_contains "$REPO_ROOT/docs/installation.md" 'older Claude-only upstream hook, with different configuration and behavior.'
+echo "PASS: public quickstart distinguishes Jev setup from the legacy wizard"

@@ -17,10 +17,14 @@ Steps to reproduce:
 **Expected behavior**
 What you expected to happen.
 
-**Log output**
-Paste the relevant lines from `~/.claude/hooks/model-router-hook.log`.
+**Safe diagnostics**
+Share only a minimal synthetic reproducer and sanitized reason codes. Do not
+paste raw prompts, transcripts, state, API keys, credentials or machine paths.
+For vulnerabilities, follow SECURITY.md instead of opening a public issue.
 
 **Environment**
 - OS: (e.g. macOS 14, Ubuntu 24.04, WSL2)
 - Shell: (e.g. bash 5.2, zsh 5.9)
-- Claude Code version:
+- Runtime and version (Claude Code or Codex):
+- Integration (Jev generated package or legacy heuristic plugin):
+- Python version and package version:

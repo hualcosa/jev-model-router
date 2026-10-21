@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Security vulnerability
-    url: https://github.com/tzachbon/claude-model-router-hook/security/advisories/new
-    about: Report a security vulnerability privately
+  - name: Security policy
+    url: https://github.com/hualcosa/jev-model-router/security/policy
+    about: Read the private-reporting policy before sharing vulnerability details

@@ -5,3 +5,8 @@ __pycache__/
 specs/.current-spec
 specs/.current-epic
 **/.progress.md
+
+# Internal development materials are preserved outside the public tree.
+specs/
+docs/slides/
+.claude/settings.json

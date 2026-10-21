@@ -1,5 +1,0 @@
-OK: routed-haiku.md
-OK: routed-opus-high.md
-OK: routed-opus-max.md
-OK: routed-opus-medium.md
-OK: routed-opus-xhigh.md

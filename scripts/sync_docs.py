@@ -15,9 +15,9 @@ import sys
 START = "<!-- advisory:start -->"
 END = "<!-- advisory:end -->"
 
-# Repo-relative doc targets carrying advisory marker blocks.
+# Legacy advisory targets only. The product README documents the Jev core,
+# not this separate heuristic taxonomy. Public docs have their own CI contract.
 TARGETS = (
-    "README.md",
     "prompt.md",
     os.path.join("plugins", "claude-model-router-hook", "prompt.md"),
 )
